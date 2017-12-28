@@ -30,7 +30,7 @@ public class BuildAnimation : EditorWindow
     private static int _zhenSkillA = 8;
     private static int _zhenBorn = 8;
 
-    [MenuItem("Build/BuildAnimaiton")]
+    [MenuItem("Game Tools/BuildAnimaiton")]
     public static void Init()
     {
         _editor = BuildAnimation.GetWindow<BuildAnimation>(true, "动画编辑器", true);
