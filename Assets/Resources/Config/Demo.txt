@@ -1,0 +1,6 @@
+﻿id,名字,浮点型
+Id,Name,FloatCol
+int,string,float
+1,sl,1.41
+2,ss,2.2
+3,xx,3.5

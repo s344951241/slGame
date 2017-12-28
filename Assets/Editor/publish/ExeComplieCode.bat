@@ -1,0 +1,1 @@
+C:\Windows\Microsoft.Net\Framework\v4.0.30319\msbuild.exe E:/game1/client//client.CSharp.csproj /t:rebuild /p:optimize=true /property:Configuration=Release
