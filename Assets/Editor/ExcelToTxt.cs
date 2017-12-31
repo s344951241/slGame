@@ -9,8 +9,8 @@ using UnityEngine;
 
 public class ExcelToTxt : Editor {
 
-    private static string path = Application.dataPath + "/DataConfig/Excel";
-    private static string txtPath = Application.dataPath + "/Resources/Config";
+    private static string path = Application.dataPath + "/AssetsLibrary/Config/excel";
+    private static string txtPath = Application.dataPath + "/Resources/GameAssets/Configs";
     private static string CSharpVOPath = Application.dataPath + "/Scripts/VO";
     [MenuItem("config/txt")]
     public static void test()
@@ -60,12 +60,13 @@ public class ExcelToTxt : Editor {
 
     private static void excelToTxt(string name)
     {
-       
+        Debug.Log(">>>>>>>>>>>"+name);
         FileStream stream = File.Open(path + "/" + name, FileMode.Open, FileAccess.Read);
         IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
         DataSet result = excelReader.AsDataSet();
         for (int num = 0; num < result.Tables.Count; num++)
         {
+            Debug.Log(">>>>>>>>>>>" + result.Tables[num].TableName);
             excelToVo(result.Tables[num]);
             int columns = result.Tables[num].Columns.Count;
             int rows = result.Tables[num].Rows.Count;
@@ -91,7 +92,11 @@ public class ExcelToTxt : Editor {
             }
             sw.Close();
         }
-       
+
+        excelReader.Close();
+        stream.Close();
+
+
     }
 
     private static void excelToVo(DataTable table)

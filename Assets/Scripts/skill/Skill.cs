@@ -29,7 +29,7 @@ public class Skill
 
     public int _action;
 
-    public SkillVo _vo;
+    public SkillVO _vo;
 
     public SkillInfo _info;
 
@@ -98,13 +98,13 @@ public class Skill
         this._action = 0;
     }
 
-    public void Init(int id, SkillInfo info, SkillVo vo, EntityBase caster)
+    public void Init(int id, SkillInfo info, SkillVO vo, EntityBase caster)
     {
         this.Dispose();
         this._caster = caster;
         this._info = info;
         this._vo = vo;
-        this._CDTotal = (float)this._vo.cd;
+        //this._CDTotal = (float)this._vo.cd;
         this._id = id;
         this.InitProgress();
     }
@@ -175,7 +175,7 @@ public class Skill
         {
             return;
         }
-        if (this._timer >= (float)this._vo.time)
+        if (this._timer >= (float)this._vo.Preparetime)
         {
             this._currentStateType = SKILL_STATE_TYPE.结束;
             this.RecoverAction();

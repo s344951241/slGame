@@ -701,7 +701,7 @@ public class EntityBase
 
     public void useSkill(int id, int camp, EntityBase target, Vector3? preBeginPos, Vector3? preBegionDir, Vector3? preEndPos, int uid)
     {
-        SkillVo vo = DataMgr.skillModel.GetVo(id.ToString());
+        SkillVO vo = SkillVO.GetConfig(id); //DataMgr.skillModel.GetVo(id.ToString());
         if (vo != null)
         {
             this._skillCtrl.useSkill(id, camp, target, preBeginPos, preBegionDir, preEndPos);

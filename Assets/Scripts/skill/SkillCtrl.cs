@@ -30,7 +30,7 @@ public class SkillCtrl
         if (skill == null)
         {
             SkillInfo skillInfo = Singleton<SkillInfoModel>.Instance.GetSkillInfo(id);
-            SkillVo vo = DataMgr.skillModel.GetVo(id.ToString());
+            SkillVO vo = SkillVO.GetConfig(id);
             skill = new Skill();
             skill.Init(id, skillInfo, vo, this._caster);
             this._skilList.Add(skill);
@@ -39,7 +39,7 @@ public class SkillCtrl
         else
         {
             SkillInfo skillInfo2 = Singleton<SkillInfoModel>.Instance.GetSkillInfo(id);
-            SkillVo vo2 = DataMgr.skillModel.GetVo(id.ToString());
+            SkillVO vo2 = SkillVO.GetConfig(id);
             skill.Init(id, skillInfo2, vo2, this._caster);
         }
         return skill;

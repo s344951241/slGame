@@ -1,0 +1,6 @@
+﻿id,名字,时间,cd,伤害,范围,速度,类型
+Id,Name,Preparetime,Cd,Damage,Range,Speed,Type
+int,string,int,float,float,float,float,int
+1,技能1,1,2,3,4,2,1
+2,技能2,2,3,3,4,3,2
+3,技能3,3,3,3,3,3,3
