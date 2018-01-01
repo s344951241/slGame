@@ -1,0 +1,1 @@
+C:\Windows\Microsoft.Net\Framework\v4.0.30319\msbuild.exeD:/github/slGame//slGame.CSharp.csproj /t:rebuild /p:optimize=true /property:Configuration=Release

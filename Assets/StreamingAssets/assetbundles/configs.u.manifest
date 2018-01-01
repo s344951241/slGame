@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3131137375
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a78b140938117ec20205759a765be193
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/GameAssets/Configs/Demo.txt
+- Assets/Resources/GameAssets/Configs/Skill.txt
+- Assets/Resources/GameAssets/Configs/skill/skillcfg.bytes
+Dependencies: []

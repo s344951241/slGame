@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 public class SkillInfo
 {
     //
@@ -25,6 +27,7 @@ public class SkillInfo
     //
     public void DrawUI()
     {
+#if UNITY_EDITOR
         EditorGUILayout.BeginHorizontal();
         GUILayout.Box(this._id.ToString(), new GUILayoutOption[] {
             GUILayout.ExpandWidth (true)
@@ -45,6 +48,7 @@ public class SkillInfo
             }
             EditorGUILayout.EndHorizontal();
         }
+#endif
     }
 
     public void Read(BinaryReader br)

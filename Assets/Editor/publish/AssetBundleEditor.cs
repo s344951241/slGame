@@ -13,7 +13,7 @@ public class AssetBundleEditor:EditorWindow
     public static readonly List<string> PackedNoExportableFileTypes = new List<string>{".txt",".cs",".shader",".lua",".bytes",".dat",".meta"};
 
     private static readonly string bundleExportFolder = Application.dataPath+"/StreamingAssets/Assetbundles/";
-    private static readonly string bundleVersionPath = Application.dataPath+"/AssetsLibrary/Configs/bundleversion.xml";
+    private static readonly string bundleVersionPath = Application.dataPath+"/AssetsLibrary/Config/bundleversion.xml";
     private static XmlDocument bundleDependDoc = null;
     private static int operateMode = 0;
 
@@ -48,9 +48,9 @@ public class AssetBundleEditor:EditorWindow
         operateMode = 1;
         ExecuteComplieCode();
         AssetDatabase.Refresh();
-        SingleBundle("Assets/script.bytes","assetbundles/scripts.u");
+        SingleBundle("Assets/scripts.bytes","assetbundles/scripts.u");
         WriteXMLData("scripts.u");
-        File.Delete(Application.dataPath+"/script.bytes");
+        File.Delete(Application.dataPath+"/scripts.bytes");
         SaveXMLDoc();
     }
 
@@ -116,7 +116,7 @@ public class AssetBundleEditor:EditorWindow
         UpdateAllAssetBundleName();
         operateMode = 0;
         bundleDependDoc = null;
-        EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildTarget());
+        EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildGroup(),GetBuildTarget());
         AssetBundleManifest kABM = UnityEditor.BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath+"",BuildAssetBundleOptions.DeterministicAssetBundle, GetBuildTarget());
         CreateBundleVersionXML(kABM);
         SaveXMLDoc();
@@ -208,13 +208,19 @@ public class AssetBundleEditor:EditorWindow
         build.assetNames = new string [] {assetPath};
         build.assetBundleVariant = "";
         AssetBundleManifest kABM = BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath+"",new AssetBundleBuild[]{build},BuildAssetBundleOptions.DeterministicAssetBundle, GetBuildTarget());
-        string [] dependencies = kABM.GetAllDependencies(assetBundleName);
-        dependencies = kABM.GetDirectDependencies(assetBundleName);
         List<string> list = new List<string>();
-        for(int k=0;k<dependencies.Length;k++)
+        if (kABM != null)
         {
-            list.Add(dependencies[k].Replace("assetbundles/",""));
+            string[] dependencies = kABM.GetAllDependencies(assetBundleName);
+            dependencies = kABM.GetDirectDependencies(assetBundleName);
+           
+            for (int k = 0; k < dependencies.Length; k++)
+            {
+                list.Add(dependencies[k].Replace("assetbundles/", ""));
+            }
         }
+       
+       
         if(assetPath.StartsWith("Assets/scripts.bytes"))
         {
             WriteXMLData("scripts.u");
@@ -477,7 +483,7 @@ public class AssetBundleEditor:EditorWindow
         FileTools.WriteText(batPath,content,false);
         ExecuteBatFile(batPath);
 
-        string dllPath = rootPath+"Temp/UnityVS_bin/Release/Assembly-CSharp.dll";
+        string dllPath = rootPath+"Temp/UnityVS_bin/Debug/Assembly-CSharp.dll";
         string newPath = Application.dataPath+"/scripts.bytes";
         if(FileTools.IsExistFile(newPath))
         {
@@ -497,6 +503,17 @@ public class AssetBundleEditor:EditorWindow
         return BuildTarget.Android;
 #else
         return BuildTarget.StandaloneWindows;
+#endif
+    }
+
+    public static BuildTargetGroup GetBuildGroup()
+    {
+#if UNITY_IOS || UNITY_IPHONE
+        return BuildTargetGroup.iOS;
+#elif UNITY_ANDROID
+        return BuildTargetGroup.Android;
+#else
+        return BuildTargetGroup.Standalone;
 #endif
     }
 

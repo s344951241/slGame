@@ -334,7 +334,7 @@ public class PublisherEditor:EditorWindow{
             if(needCompileCode)
             {
 #if UNITY_ANDROID
-                EditorApplication.ExecuteMenuItem("Game Tools/资源打包/打包script资源")
+                EditorApplication.ExecuteMenuItem("Game Tools/资源打包/打包script资源");
 #endif
             }
             AssetDatabase.SaveAssets();

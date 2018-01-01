@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 public class SkillEvent
 {
     //
@@ -127,6 +129,7 @@ public class SkillEvent
 
     public void DrawUI()
     {
+#if UNITY_EDITOR
         EditorGUILayout.BeginVertical(GUILayout.Width(SkillEvent.WIDTH));
         GUILayout.Space((float)(this._layer * 10));
         EditorGUILayout.BeginHorizontal();
@@ -184,6 +187,7 @@ public class SkillEvent
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.EndVertical();
         this.RefreshType();
+#endif
     }
 
     public string getKey()
