@@ -229,6 +229,9 @@
     <Reference Include="System.Data">
       <HintPath>Assets\Plugins\u3d-Excel\System.Data.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>Assets\Plugins\dll\protobuf-net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\Driver.cs" />

@@ -280,15 +280,18 @@
     <Reference Include="System.Data">
       <HintPath>Assets\Plugins\u3d-Excel\System.Data.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>Assets\Plugins\dll\protobuf-net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="slGame.CSharp.Plugins.csproj">
-      <Project>{A50A2FA1-B31A-2D0C-8BCE-38ABCF4D4550}</Project>
-      <Name>slGame.CSharp.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="slGame.CSharp.csproj">
       <Project>{733C5912-EEE7-1B59-409B-D295004C2132}</Project>
       <Name>slGame.CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="slGame.CSharp.Plugins.csproj">
+      <Project>{A50A2FA1-B31A-2D0C-8BCE-38ABCF4D4550}</Project>
+      <Name>slGame.CSharp.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
