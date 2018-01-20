@@ -220,6 +220,9 @@
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\dll\DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>Assets\Plugins\dll\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="Excel">
       <HintPath>Assets\Plugins\u3d-Excel\Excel.dll</HintPath>
     </Reference>
@@ -228,9 +231,6 @@
     </Reference>
     <Reference Include="System.Data">
       <HintPath>Assets\Plugins\u3d-Excel\System.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>Assets\Plugins\dll\protobuf-net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -253,7 +253,16 @@
     <Compile Include="Assets\Scripts\Model\DemoModel.cs" />
     <Compile Include="Assets\Scripts\Model\GlobalBase.cs" />
     <Compile Include="Assets\Scripts\Model\MoveModel.cs" />
+    <Compile Include="Assets\Scripts\net\BaseClient.cs" />
+    <Compile Include="Assets\Scripts\net\Msg.cs" />
+    <Compile Include="Assets\Scripts\net\MsgHeader.cs" />
     <Compile Include="Assets\Scripts\net\proto\Person.cs" />
+    <Compile Include="Assets\Scripts\net\ProtoManager.cs" />
+    <Compile Include="Assets\Scripts\net\ProtoReq.cs" />
+    <Compile Include="Assets\Scripts\net\ProtoRes.cs" />
+    <Compile Include="Assets\Scripts\net\RingBuffer.cs" />
+    <Compile Include="Assets\Scripts\net\TcpClient.cs" />
+    <Compile Include="Assets\Scripts\net\UdpClient.cs" />
     <Compile Include="Assets\Scripts\network\net\ByteArray.cs" />
     <Compile Include="Assets\Scripts\network\net\LockedPool.cs" />
     <Compile Include="Assets\Scripts\network\net\NetManager.cs" />
@@ -300,6 +309,8 @@
     <Compile Include="Assets\Scripts\SoundMgr.cs" />
     <Compile Include="Assets\Scripts\Table.cs" />
     <Compile Include="Assets\Scripts\tools\BigEndianBitConverter.cs" />
+    <Compile Include="Assets\Scripts\tools\ByteBuffer.cs" />
+    <Compile Include="Assets\Scripts\tools\CRC.cs" />
     <Compile Include="Assets\Scripts\tools\DefaultModelPools.cs" />
     <Compile Include="Assets\Scripts\tools\DoTweenUtils.cs" />
     <Compile Include="Assets\Scripts\tools\EndianBitConverter.cs" />
@@ -307,6 +318,7 @@
     <Compile Include="Assets\Scripts\tools\EventDispatcher.cs" />
     <Compile Include="Assets\Scripts\tools\LittleEndianBitConverter.cs" />
     <Compile Include="Assets\Scripts\tools\ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\tools\ProtoSerialize.cs" />
     <Compile Include="Assets\Scripts\tools\SharedManager.cs" />
     <Compile Include="Assets\Scripts\tools\StringUtils.cs" />
     <Compile Include="Assets\Scripts\tools\TimeMgr.cs" />
