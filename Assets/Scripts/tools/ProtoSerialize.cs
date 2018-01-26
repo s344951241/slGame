@@ -29,7 +29,7 @@ public class ProtoSerialize {
         byteOut = new byte[leng - MsgHeader.HEADER_SIZE];
         buff.ReadBytes(byteOut, 0, leng - MsgHeader.HEADER_SIZE);
     }
-    private static byte[] Serialize<T>(T msg)
+    public static byte[] Serialize<T>(T msg)
     {
         byte[] result = null;
         if (msg != null)
@@ -48,7 +48,7 @@ public class ProtoSerialize {
         T result = default(T);
         if (message != null)
         {
-            using (var stream = new MemoryStream())
+            using (var stream = new MemoryStream(message))
             {
                 result = Serializer.Deserialize<T>(stream);
             }

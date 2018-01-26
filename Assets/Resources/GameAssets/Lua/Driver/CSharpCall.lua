@@ -16,7 +16,7 @@ end
 
 function CSharpCall.Update(deltaTime)
 	-- body
-	print("doUpdate"..tostring(deltaTime))
+	--print("doUpdate"..tostring(deltaTime))
 end
 
 function CSharpCall.LateUpdate(deltaTime)

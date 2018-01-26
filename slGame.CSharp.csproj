@@ -240,6 +240,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LuaProtoTest.cs" />
     <Compile Include="Assets\LuaStart.cs" />
     <Compile Include="Assets\Scripts\ConfigManager.cs" />
     <Compile Include="Assets\Scripts\effect\EffectMgr.cs" />
@@ -248,6 +249,10 @@
     <Compile Include="Assets\Scripts\effect\IzCommonEffectEvent.cs" />
     <Compile Include="Assets\Scripts\entity\EntityBase.cs" />
     <Compile Include="Assets\Scripts\entity\EntityMgr.cs" />
+    <Compile Include="Assets\Scripts\event\EventArgsCollection.cs" />
+    <Compile Include="Assets\Scripts\event\EventConst.cs" />
+    <Compile Include="Assets\Scripts\event\EventManager.cs" />
+    <Compile Include="Assets\Scripts\event\EventTest.cs" />
     <Compile Include="Assets\Scripts\LayerName.cs" />
     <Compile Include="Assets\Scripts\lua\ClassForLua.cs" />
     <Compile Include="Assets\Scripts\lua\LuaConfig.cs" />
@@ -263,6 +268,7 @@
     <Compile Include="Assets\Scripts\net\Msg.cs" />
     <Compile Include="Assets\Scripts\net\MsgHeader.cs" />
     <Compile Include="Assets\Scripts\net\proto\Person.cs" />
+    <Compile Include="Assets\Scripts\net\proto\Test.cs" />
     <Compile Include="Assets\Scripts\net\ProtoManager.cs" />
     <Compile Include="Assets\Scripts\net\ProtoReq.cs" />
     <Compile Include="Assets\Scripts\net\ProtoRes.cs" />
