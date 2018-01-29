@@ -1,0 +1,3 @@
+D:/github/xLua/build/build64/CMakeFiles/xlua.dir
+D:/github/xLua/build/build64/CMakeFiles/ALL_BUILD.dir
+D:/github/xLua/build/build64/CMakeFiles/ZERO_CHECK.dir

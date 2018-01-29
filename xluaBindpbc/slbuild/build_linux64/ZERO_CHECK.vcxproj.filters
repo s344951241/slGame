@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\github\slGame\xluaBindpbc\xLua\build\build_linux64\CMakeFiles\6e7d30f344ada055966502f2b218e0c5\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{EA896DD4-E022-3213-999D-65BFEBB1791B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

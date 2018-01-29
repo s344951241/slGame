@@ -1,0 +1,3 @@
+D:/github/slGame/xluaBindpbc/xLua/build/build_linux64/CMakeFiles/xlua.dir
+D:/github/slGame/xluaBindpbc/xLua/build/build_linux64/CMakeFiles/ALL_BUILD.dir
+D:/github/slGame/xluaBindpbc/xLua/build/build_linux64/CMakeFiles/ZERO_CHECK.dir
