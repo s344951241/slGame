@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 // Generated from: Proto/Person.proto
-namespace ProtoData
+namespace Person
 {
   [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"Person")]
   public partial class Person : global::ProtoBuf.IExtensible

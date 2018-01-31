@@ -1,0 +1,15 @@
+ProtoDict={
+        [1454666908]={Id=1454666908,Name="Person.Person",},
+        [3783271952]={Id=3783271952,Name="Person.PhoneNumber",},
+        [2865205636]={Id=2865205636,Name="Person1.Person",},
+        [3188667361]={Id=3188667361,Name="Person1.PhoneNumber",},
+        [608736871]={Id=608736871,Name="Person2.Person",},
+        [63266607]={Id=63266607,Name="Person2.PhoneNumber",},
+        [3907163897]={Id=3907163897,Name="Person3.Person",},
+        [3730015914]={Id=3730015914,Name="Person3.PhoneNumber",},
+        [3794247648]={Id=3794247648,Name="Person4.Person",},
+        [2736816370]={Id=2736816370,Name="Person4.PhoneNumber",},
+        [781033342]={Id=781033342,Name="Person5.Person",},
+        [2125879671]={Id=2125879671,Name="Person5.PhoneNumber",},
+        [4240752142]={Id=4240752142,Name="ProtoBuf.TestProto",},
+}

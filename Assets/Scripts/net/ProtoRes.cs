@@ -1,5 +1,4 @@
-﻿using ProtoData;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ public class ProtoRes{
     public ProtoRes()
     {
         ResFunctionDic = new Dictionary<uint, ON_RES>();
-        ResFunctionDic.Add(CRC.GetCRC32(typeof(Person).FullName), OnPerson);
+        ResFunctionDic.Add(CRC.GetCRC32(typeof(Person.Person).FullName), OnPerson);
     }
 
 
@@ -21,9 +20,9 @@ public class ProtoRes{
     {
         if (proto == null)
             return;
-        if (proto is Person)
+        if (proto is Person.Person)
         {
-            Person p = proto as Person;
+            Person.Person p = proto as Person.Person;
             //
         }
     }
