@@ -67,6 +67,22 @@ public class TcpClient : BaseClient {
         }
     }
 
+    public override void SendMsg(byte[] bytes)
+    {
+        if (!Connected)
+        {
+            return;
+        }
+        try {
+            _socket.BeginSend(bytes, 0, bytes.Length, 0, OnSend, _socket);
+        }
+        catch(Exception e)
+        {
+            this.Close(true);
+
+        }
+    }
+
 
     void OnConnected(IAsyncResult result)
     {

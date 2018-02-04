@@ -16,6 +16,8 @@ set TARGETPB_PATH=.\Lua
 
 ::删除之前创建的文件
 del %TARGET_PATH%\*.* /f /s /q
+del %TARGETPB_PATH%\*.* /f /s /q
+
 echo -------------------------------------------------------------
 
 for /f "delims=" %%i in ('dir /b "%SOURCE_PATH%\*.proto"') do (
@@ -28,9 +30,10 @@ for /f "delims=" %%i in ('dir /b "%SOURCE_PATH%\*.proto"') do (
 
 echo 转换完成
 
+
 ::复制到工程
 xcopy %TARGET_PATH%\*.cs ..\..\Assets\Scripts\net\proto\ /Y
-xcopy %TARGETPB_PATH%\*.pb ..\..\Assets\Resources\GameAssets\Lua\Proto\ /Y
+xcopy %TARGETPB_PATH%\*.pb ..\..\Assets\Resources\GameAssets\Proto\ /Y
 
 python RunProto.py
 

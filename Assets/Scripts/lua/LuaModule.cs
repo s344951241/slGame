@@ -77,7 +77,12 @@ public class LuaModule {
         {
             Debug.LogError("Lua模块中缺少：LateUpdate");
         }
+
+        ProtoManager.Instance.BytesToLua = CSharpCallTable.Get<ProtoManager.LuaHandleModule>("RecivBytes");
+        if (ProtoManager.Instance.BytesToLua == null)
+            Debug.LogError("Lua模块中缺少:RecivBytes");
         CSharpCallTable.Dispose();
+
     }
 
     public void Dispose()
@@ -88,5 +93,6 @@ public class LuaModule {
         _update = null;
         _fixedUpdate = null;
         _lateUpdate = null;
+        ProtoManager.Instance.BytesToLua = null;
     }
 }

@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 890577451
+CRC: 3383279840
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: assetbundles/scripts.u
+      Name: assetbundles/protos.u
       Dependencies: {}

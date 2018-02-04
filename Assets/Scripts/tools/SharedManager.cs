@@ -8,7 +8,7 @@ public class SharedManager:Singleton<SharedManager>{
     public SharedManager(){
         dicSprite = new Dictionary<string,Sprite>();
         #if _DEBUG
-        Sprite[] spts = Resources.LoadAll<Sprite>("GameAssets/Assetbundles/UI/Shared/Shared");
+        Sprite[] spts = Resources.LoadAll<Sprite>("GameAssets/UI/Shared/Shared");
         for(int i=0;i<spts.Length;i++)
         {
             dicSprite.Add((URLConst.SHARED_PATH+spts[i].name).ToLower(),spts[i]);

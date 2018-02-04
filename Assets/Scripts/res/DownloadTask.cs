@@ -39,9 +39,9 @@ public class DownloadTask {
             }
             try {
                 string extension = FileTools.GetExtension(bundlePath);
-                string strAssetBundlePath = "GameAsset/Assetbundles/" + bundlePath.Replace(extension, string.Empty);
+                string strAssetBundlePath = "Resources/GameAssets/" + bundlePath.Replace(extension, string.Empty);
                 Debug.Log("正在加载:" + strAssetBundlePath);
-                resource.MainAsset = Resources.Load(strAssetBundlePath);
+                resource.MainAsset = Resources.Load("GameAssets/"+bundlePath.Replace(extension,""));
                 if(resource.MainAsset==null&&!URLConst.listInitGameRes.Contains(bundlePath))
                 {
                     Debug.LogError(strAssetBundlePath+"不存在");

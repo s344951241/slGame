@@ -111,6 +111,7 @@ public static class LuaConfig
         typeof(EventArgs),
         typeof(SimpleEventArgs),
         typeof(LuaProtoTest),
+        typeof(ProtoManager),
     };
 
     //C#静态调用Lua的配置（包括事件的原型），仅可以配delegate，interface
@@ -120,6 +121,7 @@ public static class LuaConfig
                 typeof(Func<double, double, double>),
                 typeof(Action<string>),
                 typeof(Action<double>),
+                typeof(Action<object>),
                 typeof(UnityEngine.Events.UnityAction),
                 typeof(System.Collections.IEnumerator),
                 typeof(EventHandler<EventArgs>),

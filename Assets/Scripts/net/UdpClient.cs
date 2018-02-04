@@ -75,7 +75,18 @@ public class UdpClient : BaseClient
             Close(true);
         }
     }
-
+    public override void SendMsg(byte[] bytes)
+    {
+        try
+        {
+            _socket.SendTo(bytes, _ipEndPoint);
+            _socket.BeginSendTo(bytes, 0, bytes.Length, SocketFlags.None, _serverEndPoint, OnSend, null);
+        }
+        catch (Exception e)
+        {
+            Close(true);
+        }
+    }
     private void OnSend(IAsyncResult result)
     {
         try

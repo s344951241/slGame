@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Fonts  {
 
-    public readonly static string FONT_FZY4JW_PATH = "GameAssets/Assetbundles/UI/Font/FZY4JW";
+    public readonly static string FONT_FZY4JW_PATH = "GameAssets/UI/Font/FZY4JW";
     private static Dictionary<string, Font> _fontDic = new Dictionary<string, Font>();
 
     public static Font font_FZY4JW

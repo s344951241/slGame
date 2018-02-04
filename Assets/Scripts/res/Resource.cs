@@ -103,7 +103,7 @@ public class Resource : EventDispatcher {
         #if _DEBUG
         if (bundlePath.StartsWith("UI/Textures/"))
         {
-            Sprite[] array = Resources.LoadAll<Sprite>("GameAssets/Assetbundles/" + bundlePath.Replace(".assetbundle", string.Empty));
+            Sprite[] array = Resources.LoadAll<Sprite>("GameAssets/" + bundlePath.Replace(".assetbundle", string.Empty));
             for (int i = 0; i < array.Length; i++)
             {
                 Sprite sprite = array[i];

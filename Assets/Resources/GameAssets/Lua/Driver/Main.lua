@@ -3,17 +3,17 @@
 Main= {}
 
 local require = require
-
+require "Net.protobuf"
 require "Driver.CSharpCall"
 require "Driver.LuaStart"
-
-pb = require "protobuf"
+require "Net.LuaNet"
 
 local CS = CS
 local EventManager = CS.EventManager
 local EventConst = CS.EventConst
 local SimpleEventArgs = CS.SimpleEventArgs
 local LuaProtoTest = CS.LuaProtoTest
+local ProtoManager = CS.ProtoManager
 
 function Main:Start()
 	print("------------lua启动ing")
@@ -21,21 +21,18 @@ function Main:Start()
 	LuaStart:TestMethod("11111")
 	EventManager.Instance:addEvent(EventConst.EVENT_TEST2,self.EventCall)
 	EventManager.Instance:invokeEvent(EventConst.EVENT_TEST,SimpleEventArgs("11111"),self)
-
-	local path = "Assets/Resources/GameAssets/Lua/Proto/Test.pb"
-	local file = io.open(path,"rb")
-	local buffer = file:read "*a"
-	file:close()
-	pb.register(buffer)
 	
-	local test = {
+	
+	LuaNet:Init()
+	
+	--[[local test = {
 		id = 123456,
 		name = "vv"
 	}
 	local code = pb.encode("ProtoBuf.TestProto",test)
 	LuaProtoTest.Instance:getLuaCode(code)
 	local code2 = pb.decode("ProtoBuf.TestProto",code)
-	print(code2.name)
+	print(code2.name)--]]
 end
 
 function Main.EventCall(sender,e)

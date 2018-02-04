@@ -10,7 +10,7 @@ using UnityEngine;
 public class AssetBundleEditor:EditorWindow
 {
     public static readonly List<string> PackedExportableFileTypes = new List<string>{".prefab",".controller",".mat",".png",".jpg",".bmp",".tga",".anim",".unity",".exr",".ogg",".mp3"};
-    public static readonly List<string> PackedNoExportableFileTypes = new List<string>{".txt",".cs",".shader",".lua",".bytes",".dat",".meta"};
+    public static readonly List<string> PackedNoExportableFileTypes = new List<string>{".txt",".pb",".cs",".shader",".lua",".bytes",".dat",".meta"};
 
     private static readonly string bundleExportFolder = Application.dataPath+"/StreamingAssets/Assetbundles/";
     private static readonly string bundleVersionPath = Application.dataPath+"/AssetsLibrary/Config/bundleversion.xml";
@@ -18,13 +18,14 @@ public class AssetBundleEditor:EditorWindow
     private static int operateMode = 0;
 
     public const string ASSET_ROOT = "Assets/Resources/GameAssets/";
-    public const string ASSET_BUNDLE_PATH = "Assets/Resources/GameAssets/Assetbundles/";
+    public const string ASSET_BUNDLE_PATH = "Assets/Resources/GameAssets/";
     public const string ASSET_CONFIG_PATH = "Assets/Resources/GameAssets/Configs";
     public const string ASSET_SHADER_PATH = "Assets/Resources/GameAssets/Shaders";
     public const string ASSET_LUA_PATH = "Assets/Resources/GameAssets/Luas";
-    public const string ASSET_ICON_PATN = "Assets/Resources/GameAssets/Assetbundles/UI/Icon";
+    public const string ASSET_PROTO_PATH = "Assets/Resources/GameAssets/Proto";
+    public const string ASSET_ICON_PATN = "Assets/Resources/GameAssets/UI/Icon";
 
-    private static readonly List<string> canSingleBundle = new List<string> {".png",".jpg",".bmp",".tga",".tif",".anim","Movies/","Musics/","/Luas","/Configs","/Shaders",".ttf",".bytes"};
+    private static readonly List<string> canSingleBundle = new List<string> {".png",".jpg",".bmp",".tga",".tif",".anim","Movies/","Musics/","/Lua","/Configs","/Shaders","/Proto",".ttf",".bytes"};
 
     [MenuItem("Game Tools/资源打包/打包Config文件夹",false,10)]
     public static void AssetBundle_Config()
@@ -42,7 +43,12 @@ public class AssetBundleEditor:EditorWindow
     {
         SingleBundle(ASSET_LUA_PATH,"assetbundles/luas.u");
     }
-    [MenuItem("Game Tools/资源打包/打包Scripts文件夹",false,40)]
+    [MenuItem("Game Tools/资源打包/打包Proto文件夹(lua使用)", false, 40)]
+    public static void AssetBundle_Proto()
+    {
+        SingleBundle(ASSET_PROTO_PATH, "assetbundles/protos.u");
+    }
+    [MenuItem("Game Tools/资源打包/打包Scripts文件夹",false,50)]
      public static void AssetBundle_Scripts()
     {
         operateMode = 1;
@@ -168,7 +174,7 @@ public class AssetBundleEditor:EditorWindow
         WriteXMLData("luas.u");
         WriteXMLData("shaders.u");
 
-        string [] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/Assetbundles/","*.*",true);
+        string [] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/","*.*",true);
         for(int i=0;i<filePaths.Length;i++)
         {
             string assetPath = filePaths[i].Replace("\\","/").Replace(Application.dataPath,"Assets");
@@ -219,31 +225,35 @@ public class AssetBundleEditor:EditorWindow
                 list.Add(dependencies[k].Replace("assetbundles/", ""));
             }
         }
-       
-       
-        if(assetPath.StartsWith("Assets/scripts.bytes"))
+
+
+        if (assetPath.StartsWith("Assets/scripts.bytes"))
         {
             WriteXMLData("scripts.u");
         }
-        else if(assetPath.StartsWith(ASSET_ROOT)==false)
+        else if (assetPath.StartsWith(ASSET_ROOT) == false)
         {
             return false;
         }
-        else if(assetPath.StartsWith(ASSET_CONFIG_PATH))
+        else if (assetPath.StartsWith(ASSET_CONFIG_PATH))
         {
             WriteXMLData("configs.u");
         }
-        else if(assetPath.StartsWith(ASSET_LUA_PATH))
+        else if (assetPath.StartsWith(ASSET_LUA_PATH))
         {
             WriteXMLData("luas.u");
         }
-        else if(assetPath.StartsWith(ASSET_SHADER_PATH))
+        else if (assetPath.StartsWith(ASSET_PROTO_PATH))
+        {
+            WriteXMLData("protos.u");
+        }
+        else if (assetPath.StartsWith(ASSET_SHADER_PATH))
         {
             WriteXMLData("shaders.u");
         }
         else
         {
-            WriteXMLData(assetPath.Replace(ASSET_BUNDLE_PATH,"").Split('.')[0]+URLConst.EXTEND_ASSETBUNDLE,list.ToArray());
+            WriteXMLData(assetPath.Replace(ASSET_BUNDLE_PATH, "").Split('.')[0] + URLConst.EXTEND_ASSETBUNDLE, list.ToArray());
         }
         SaveXMLDoc();
         return true;
@@ -289,7 +299,7 @@ public class AssetBundleEditor:EditorWindow
         SetAssetBundleName(ASSET_LUA_PATH,"Assetbundles/Luas");
         SetAssetBundleName(ASSET_SHADER_PATH,"Assetbundles/Shaders");
 
-        string [] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/Assetbundles/","*.*",true);
+        string [] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/","*.*",true);
         for(int i=0;i<filePaths.Length;i++)
         {
             string assetPath = filePaths[i].Replace(Application.dataPath,"Assets").Replace("\\","");
@@ -307,7 +317,7 @@ public class AssetBundleEditor:EditorWindow
     {
         AssetDatabase.RemoveUnusedAssetBundleNames();
         string [] bundleNames = AssetDatabase.GetAllAssetBundleNames();
-        string[] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/Assetbundles/","*.*",true);
+        string[] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/","*.*",true);
         for(int i=0;i<filePaths.Length;i++)
         {
             string assetPath = filePaths[i].Replace(Application.dataPath,"Assets").Replace("\\","");
@@ -544,7 +554,8 @@ public class AssetBundleEditor:EditorWindow
         bw.Close();
         steam.Close();
         AssetDatabase.Refresh();
-        SingleBundle("Assets/bundleversion.bytes","assetbundles/bundleversion.u");
+        //TODO:版本号
+        //SingleBundle("Assets/bundleversion.bytes","assetbundles/bundleversion.u");
         File.Delete(binPath);
     }
 }

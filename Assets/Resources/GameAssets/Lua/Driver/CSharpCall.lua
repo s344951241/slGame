@@ -26,3 +26,7 @@ end
 function CSharpCall.FixUpdate(fixedDeltaTime)
 	-- body
 end
+
+function CSharpCall.RecivBytes(id,bytes)
+	LuaNet:RecvByteFromCSharp(id,bytes)
+end

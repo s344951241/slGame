@@ -46,7 +46,10 @@ public class BaseClient{
     {
 
     }
+    public virtual void SendMsg(byte[] bytes)
+    {
 
+    }
     public virtual void Close(bool offline)
     {
         if (_socket == null)

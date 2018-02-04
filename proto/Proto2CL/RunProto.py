@@ -3,7 +3,8 @@
 import os
 
 print("开始执行py生成lua表")
-PATH  = "../../Assets/Resources/GameAssets/Lua/ProtoDict.lua"
+PATH  = "../../Assets/Resources/GameAssets/Lua/Net/ProtoDict.lua"
+PATHFORRENAME = "../../Assets/Resources/GameAssets/Proto/"
 
 crcTab = [0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA, 0x076DC419,
 			0x706AF48F, 0xE963A535, 0x9E6495A3, 0x0EDB8832, 0x79DCB8A4,
@@ -105,10 +106,26 @@ def getCrc32(strs):
 	for i in range(count):
 		crc = crcTab[(crc^bys[i])&0xff]^(crc>>8)
 	return (crc^0xffffffff)
-print()
 
+def reName(path):
+	asset = '	["ProtoName"]={'
+	for file in os.listdir(path):
+		if file.find(".meta")>-1:
+			os.remove(path+file)
+			print("meta文件"+path+file)
+		else:
+			oldFile = file
+			reFile = file.replace(".pb",".bytes")
+			if os.path.exists(path+reFile):
+				os.remove(path+reFile)
+			elif os.path.exists(path+oldFile):
+				os.rename(path+oldFile,path+reFile)
+				protoFile = file.replace(".pb","").replace(".bytes","").strip()
+				asset+=('"'+protoFile+'",')
+	asset+='}'
+	return asset
 context = "ProtoDict={\n"
-
+assetPath = ""
 dic = readProtos("Proto/")
 for pa in dic:
 	theDic = readProto(pa)
@@ -119,6 +136,10 @@ for pa in dic:
 			itemName =item+'.'+liItem
 			itemId = getCrc32(itemName)
 			context+=('        ['+str(itemId)+']={Id='+str(itemId)+',Name="'+itemName+'",},\n')
+			context+=('        ["'+itemName+'"]={Id='+str(itemId)+',Name="'+itemName+'",},\n')
+asset = reName(PATHFORRENAME)
+print(asset)
+context+=("\n"+asset+"\n")
 context+='}\n'
 context+='return ProtoDict' 
 

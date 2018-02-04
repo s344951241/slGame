@@ -1,4 +1,4 @@
-local  require = require
+
 
 local CS = CS
 local ForLua = CS.ClassForLua 
@@ -11,4 +11,7 @@ end
 
 function LuaStart:TestMethod(str)
 	ForLua:TheMethod(str)
+	ForLua:TheMethodForBack(str,function(param)
+		print("来自CSharp的回调参数"..param)
+	end)
 end

@@ -18,6 +18,7 @@ public class URLConst{
     public static readonly string LIGHT_PATH = "Lights/";
     public static readonly string SOUND_PATH = "Musics/";
     public static readonly string MOVE_PATH = "Movies/";
+    public static readonly string PROTO_PATH = "Proto/";
     public static readonly string DATA_CONFIG = "data" + EXTEND_ASSETBUNDLE;
     public static readonly string FONT_CONFIG = "UI/font/字体名"+EXTEND_ASSETBUNDLE;
     public static readonly string CONFIG_CONFIG = "configs"+EXTEND_ASSETBUNDLE;
@@ -71,6 +72,11 @@ public class URLConst{
     public static string GetSound(string soundId)
     {
         return SOUND_PATH + soundId + EXTEND_ASSETBUNDLE;
+    }
+
+    public static string GetProto(string protoName)
+    {
+        return PROTO_PATH + protoName + EXTEND_ASSETBUNDLE;
     }
     public static string GetUI(string name)
     {

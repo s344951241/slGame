@@ -35,6 +35,8 @@ public class ResourceManager : MonoBehaviour {
 
     public const ushort DROP_THING_PRIORITY = 140;
 
+    public const ushort PROTO_PRIORITY = 130;
+
     public const ushort SCENE_ELEMENT_PRIORITY = 110;
 
     public const ushort DEFAULT_PRIORITY = 100;

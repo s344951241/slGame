@@ -16,6 +16,7 @@ public class ProtoRes{
     }
 
 
+
     private void OnPerson(object proto)
     {
         if (proto == null)
@@ -24,6 +25,7 @@ public class ProtoRes{
         {
             Person.Person p = proto as Person.Person;
             //
+
         }
     }
 }

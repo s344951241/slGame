@@ -20,6 +20,16 @@ public class ProtoSerialize {
         return buff.ToArray();
     }
 
+    public static byte[] SerializeProto(uint msgId, byte[] bytes)
+    {
+        ushort len = (ushort)bytes.Length;
+        ByteBuffer buff = ByteBuffer.Allocate(len + MsgHeader.HEADER_SIZE);
+        buff.WriteUshort((ushort)(len + MsgHeader.HEADER_SIZE));
+        buff.WriteInt(0);
+        buff.WriteUint(msgId);
+        buff.WriteBytes(bytes);
+        return buff.ToArray();
+    }
     public static void DeserializeProto(byte[] byteIn, out byte[] byteOut, out int leng, out int check, out uint id)
     {
         ByteBuffer buff = ByteBuffer.Allocate(byteIn);
