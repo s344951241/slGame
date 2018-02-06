@@ -5,15 +5,19 @@ using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LuaStart : MonoBehaviour {
 
+    public Text text;
     // Use this for initialization
     void Start() {
         //readFile();
-        StartCoroutine(loadPb());
+       // StartCoroutine(loadLua());
         Debug.LogError(CRC.GetCRC32("ProtoBuf.TestProto"));
+        EventManager.Instance.addEvent(EventConst.EVENT_TEST, OnEventTest);
 
+        LuaManager.Instance.InitLuaEnv();
     }
 
     private void OnEventTest(object sender, EventArgs e)
@@ -25,7 +29,10 @@ public class LuaStart : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         LuaManager.Instance.Update();
+        text.text = ProtoManager.Instance.TEST;
     }
+
+
 
 
     private IEnumerator loadPb()
@@ -44,5 +51,12 @@ public class LuaStart : MonoBehaviour {
         }
         EventManager.Instance.addEvent(EventConst.EVENT_TEST, OnEventTest);
         LuaManager.Instance.InitLuaEnv();
+    }
+
+    private IEnumerator loadLua()
+    {
+        WWW www = new WWW(Application.dataPath + "Resources/Assets/Lua");
+        yield return www;
+        System.Object obj = www.assetBundle.LoadAllAssets();
     }
 }

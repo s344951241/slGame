@@ -28,12 +28,16 @@ public class LuaLoaderManager : Singleton<LuaLoaderManager>
 
     private byte[] GetLuaBytes(string luaModule)
     {
-#if DEBUG
+#if _DEBUG
         string path = GetLuaFileName(luaModule);
-        if (File.Exists(path))
-        {
-            return File.ReadAllBytes(path);
-        }
+
+        TextAsset ta = Resources.Load<TextAsset>(path);
+        return ta.bytes;
+        //if (File.Exists(path))
+        //{
+        //   return  File.ReadAllBytes(path);
+        //}
+
 #else
         int index = luaModule.LastIndexOf(".");
         string curLuaPath = string.Concat(luaModule.Substring(index + 1), ".lua");
@@ -53,7 +57,9 @@ public class LuaLoaderManager : Singleton<LuaLoaderManager>
     private string GetLuaFileName(string luaModule)
     {
         string curLuaPath = luaModule.Replace(".", "/");
-        return string.Concat(Application.dataPath, "/Resources/GameAssets/Lua/", curLuaPath, ".lua");
+        Debug.LogError("path:" + string.Concat(Application.dataPath+"/Resources/GameAssets/Lua/", curLuaPath));
+        // return string.Concat(@"file://"+Application.dataPath+"/Resources/GameAssets/Lua/", curLuaPath,".lua");
+        return string.Concat("GameAssets/Lua/", curLuaPath,".lua");
     }
         
 }

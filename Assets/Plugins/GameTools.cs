@@ -7,6 +7,8 @@ using System.Text;
 using System.Reflection;
 using System;
 using UnityEngine.UI;
+using System.Security;
+using Mono.Xml;
 
 public class GameTools
 {
@@ -40,6 +42,15 @@ public class GameTools
             PlayerPrefs.Save();
         }
     }
+
+    public static SecurityElement GetSecurityElement(string content)
+    {
+        SecurityParser parser = new SecurityParser();
+        parser.LoadXml(content);
+        SecurityElement doc = parser.ToXml();
+        return doc;
+    }
+
     public static void SetCookie(string key, string value)
     {
         PlayerPrefs.SetString(key, value);
@@ -222,5 +233,46 @@ public class GameTools
         arr.CopyTo(array, 0);
         other.CopyTo(array, arr.Length);
         return array;
+    }
+    public static string GetServerXMLByWebClient(string url)
+    {
+        string result = "";
+        try
+        {
+            WebClient client = new WebClient();
+            result = client.DownloadString(url);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
+        return result;
+    }
+
+    public static string GetServerXMLByHttpWebReq(string url)
+    {
+        string result = "";
+        WebResponse response = null;
+        StreamReader reader = null;
+
+        try
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            response = request.GetResponse();
+            reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            result = reader.ReadToEnd();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
+        finally {
+            if (reader != null)
+                reader.Close();
+            if (response != null)
+                response.Close();
+        }
+        return result;
     }
 }

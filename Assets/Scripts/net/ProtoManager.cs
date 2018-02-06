@@ -25,6 +25,8 @@ public class ProtoManager : Singleton<ProtoManager> {
     public ProtoRes _protoRes;
     public List<byte[]> LuaPbList;
 
+    public string TEST;
+
     public void BindClient(BaseClient client)
     {
         _client = client;
@@ -39,6 +41,12 @@ public class ProtoManager : Singleton<ProtoManager> {
     }
     public void SendMsgFromLua(uint msgId, byte[] bytes)
     {
+        ///test
+        TestProto testProto = ProtoSerialize.Deserialize<TestProto>(bytes);
+        TEST = "id" + testProto.id + "name" + testProto.name;
+        Debug.LogError("id" + testProto.id + "name" + testProto.name);
+        
+
         if (_client != null && bytes != null && bytes.Length != 0)
         {
             _client.SendMsg(ProtoSerialize.SerializeProto(msgId, bytes));
