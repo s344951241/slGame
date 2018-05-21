@@ -29,7 +29,6 @@ namespace CSObjectWrapEditor
 #else
         public static string common_path = Application.dataPath + "/XLua/Gen/";
 #endif
-
         static GeneratorConfig()
         {
             foreach(var type in (from type in Utils.GetAllTypes()

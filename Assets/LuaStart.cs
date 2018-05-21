@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class LuaStart : MonoBehaviour {
 
-    public Text text;
     // Use this for initialization
     void Start() {
         //readFile();
@@ -29,7 +28,6 @@ public class LuaStart : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         LuaManager.Instance.Update();
-        text.text = ProtoManager.Instance.TEST;
     }
 
 

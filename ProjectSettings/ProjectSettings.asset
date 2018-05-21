@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  productGUID: c893773b48f0ab340a0e3074b62ac668
+  productGUID: 60d72ef7ae4272d4c80fd71577fe74b7
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -514,8 +514,7 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    1: _DEBUG
-    7: _DEBUG;XLUA_GENERAL
+    7: _DEBUG;HOTFIX_ENABLE
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
