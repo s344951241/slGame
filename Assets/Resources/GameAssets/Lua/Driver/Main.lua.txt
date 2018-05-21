@@ -13,17 +13,24 @@ local EventManager = CS.EventManager
 local EventConst = CS.EventConst
 local SimpleEventArgs = CS.SimpleEventArgs
 local LuaProtoTest = CS.LuaProtoTest
-local ProtoManager = CS.ProtoManager
 
 function Main:Start()
 	print("------------lua启动ing")
 	LuaStart:Start()
 	LuaStart:TestMethod("11111")
+	xlua.hotfix(CS,'ShowString',function(self)
+			print("this is lua string")
+		end)
+	CS.HotfixTool:ShowString()
 	EventManager.Instance:addEvent(EventConst.EVENT_TEST2,self.EventCall)
 	EventManager.Instance:invokeEvent(EventConst.EVENT_TEST,SimpleEventArgs("11111"),self)
 	
-	
+	local profiler = require "Resources.perf.profiler"
+	profiler.start()
+	print(profiler.report())
 	LuaNet:Init()
+	print(profiler.report())
+	profiler.stop()
 	
 	--[[local test = {
 		id = 123456,
