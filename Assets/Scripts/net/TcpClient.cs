@@ -63,6 +63,7 @@ public class TcpClient : BaseClient {
         }
         catch (Exception e)
         {
+            Debug.LogWarning(e.Message);
             this.Close(true);
         }
     }

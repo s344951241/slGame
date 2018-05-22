@@ -212,14 +212,23 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/soft/unity20172/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/shilei_m/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/shilei_m/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets/Plugins/dll/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets/Plugins/dll/LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Assets/Plugins/dll/Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>Assets/Plugins/dll/Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>Assets/Plugins/dll/Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>Assets/Plugins/dll/Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
       <HintPath>Assets/Plugins/dll/protobuf-net.dll</HintPath>
@@ -227,17 +236,11 @@
     <Reference Include="UWAWrapper_Android">
       <HintPath>Assets/UWA/Libs/UWAWrapper_Android.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>Assets/Plugins/dll/Mono.Cecil.Mdb.dll</HintPath>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Users/shilei_m/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>Assets/Plugins/dll/Mono.Cecil.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>Assets/Plugins/dll/Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>Assets/Plugins/dll/Mono.Cecil.dll</HintPath>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>C:/Users/shilei_m/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -352,6 +355,19 @@
     <Compile Include="Assets\Scripts\tools\TimeMgr.cs" />
     <Compile Include="Assets\Scripts\tools\UtilsExtends.cs" />
     <Compile Include="Assets\Scripts\TouchManager.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\IScreenSafeAreaController.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ModelMatchMethod.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ModelMatchRule.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\RectOffsetFloat.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\RectOffsetInt.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ScreenAspectRatio.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ScreenSafeAreaConfig.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ScreenSafeAreaConfigs.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ScreenSafeAreaController.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ScreenSafeAreaManager.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ScreenSafeAreaOffset.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ScreenSafeAreaOrientationConfig.cs" />
+    <Compile Include="Assets\Scripts\ui\ScreenSafeArea\ScreenSafeAreaType.cs" />
     <Compile Include="Assets\Scripts\VO\Demo.cs" />
     <Compile Include="Assets\Scripts\VO\DemoList.cs" />
     <Compile Include="Assets\Scripts\VO\DemoVO.cs" />

@@ -263,6 +263,33 @@
     <Reference Include="System.Data">
       <HintPath>Assets/Editor/u3d-Excel/System.Data.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets/Plugins/dll/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Assets/Plugins/dll/Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>Assets/Plugins/dll/Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>Assets/Plugins/dll/Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>Assets/Plugins/dll/Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>Assets/Plugins/dll/protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="UWAEditor">
+      <HintPath>Assets/UWA/Editor/UWAEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UWALib">
+      <HintPath>Assets/UWA/Editor/UWALib.dll</HintPath>
+    </Reference>
+    <Reference Include="UWAWrapper_Android">
+      <HintPath>Assets/UWA/Libs/UWAWrapper_Android.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/shilei_m/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@1.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -278,32 +305,8 @@
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/shilei_m/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
-    <Reference Include="DOTween">
-      <HintPath>Assets/Plugins/dll/DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>Assets/Plugins/dll/protobuf-net.dll</HintPath>
-    </Reference>
-    <Reference Include="UWALib">
-      <HintPath>Assets/UWA/Editor/UWALib.dll</HintPath>
-    </Reference>
-    <Reference Include="UWAEditor">
-      <HintPath>Assets/UWA/Editor/UWAEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UWAWrapper_Android">
-      <HintPath>Assets/UWA/Libs/UWAWrapper_Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>Assets/Plugins/dll/Mono.Cecil.Mdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>Assets/Plugins/dll/Mono.Cecil.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>Assets/Plugins/dll/Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>Assets/Plugins/dll/Mono.Cecil.dll</HintPath>
+    <Reference Include="LitJson">
+      <HintPath>Assets/Plugins/dll/LitJson.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -323,6 +326,9 @@
     <Compile Include="Assets\Editor\ExcelToTxt.cs" />
     <Compile Include="Assets\Editor\publish\AssetBundleEditor.cs" />
     <Compile Include="Assets\Editor\publish\PublisherEditor.cs" />
+    <Compile Include="Assets\Editor\ScreenSafeArea\GameViewSizeType.cs" />
+    <Compile Include="Assets\Editor\ScreenSafeArea\GameViewSizeUtils.cs" />
+    <Compile Include="Assets\Editor\ScreenSafeArea\ScreenSafeAreaManagerInspector.cs" />
     <Compile Include="Assets\Editor\skill\SkillEditorTool.cs" />
     <Compile Include="Assets\Editor\skill\SkillEditorWindow.cs" />
     <Compile Include="Assets\Editor\skill\SkillLevelEditorWindow.cs" />

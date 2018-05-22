@@ -1,0 +1,272 @@
+{
+  "Version": 1,
+
+  "ModelMatchRules": {
+    "iOS": [
+      {
+        "KeyWord": "iPhone10,6",
+        "Match": 0,
+        "ConfigName": "iPhone X"
+      },
+      {
+        "KeyWord": "iPhone10,3",
+        "Match": 0,
+        "ConfigName": "iPhone X"
+      }
+    ],
+
+    "Android": [
+      {
+        "KeyWord": "vivo vivo X21",
+        "Match": 1,
+        "ConfigName": "Vivo X21"
+      },
+      {
+        "KeyWord": "COL-AL00",
+        "Match": 2,
+        "ConfigName": "Huawei Honor 10"
+      },
+      {
+        "KeyWord": "COL-AL10",
+        "Match": 2,
+        "ConfigName": "Huawei Honor 10"
+      },
+      {
+        "KeyWord": "COL-TL10",
+        "Match": 2,
+        "ConfigName": "Huawei Honor 10"
+      },
+      {
+        "KeyWord": "CLT-AL00",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "CLT-AL01",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "CLT-L04",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "CLT-L09",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "CLT-L29",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "CLT-TL00",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "CLT-TL01",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "EML-AL00",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "EML-L09",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "EML-L29",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "EML-TL00",
+        "Match": 2,
+        "ConfigName": "Huawei P20 (Pro)"
+      },
+      {
+        "KeyWord": "ANE-LX1",
+        "Match": 2,
+        "ConfigName": "Huawei P20 Lite"
+      },
+      {
+        "KeyWord": "ANE-LX2",
+        "Match": 2,
+        "ConfigName": "Huawei P20 Lite"
+      },
+      {
+        "KeyWord": "ANE-LX3",
+        "Match": 2,
+        "ConfigName": "Huawei P20 Lite"
+      },
+      {
+        "KeyWord": "OPPO PACM00",
+        "Match": 0,
+        "ConfigName": "Oppo R15"
+      },
+      {
+        "KeyWord": "OPPO PACT00",
+        "Match": 0,
+        "ConfigName": "Oppo R15"
+      }
+    ]
+  },
+
+  "Configs": {
+    "iPhone X": {
+      "AspectRatio": {
+        "Width": 812,
+        "Height": 375
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.03612,
+          "Right": 0.96388,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      },
+      "LandscapeRight": {
+        "Relative": {
+          "Left": 0.03612,
+          "Right": 0.96388,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Vivo X21": {
+      "AspectRatio": {
+        "Width": 19,
+        "Height": 9
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Huawei P20 (Pro)": {
+      "AspectRatio": {
+        "Width": 56,
+        "Height": 27
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Huawei P20 Lite": {
+      "AspectRatio": {
+        "Width": 19,
+        "Height": 9
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Huawei Honor 10": {
+      "AspectRatio": {
+        "Width": 19,
+        "Height": 9
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Oppo R15": {
+      "AspectRatio": {
+        "Width": 19,
+        "Height": 9
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      },
+      "LandscapeRight": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    }
+  }
+}

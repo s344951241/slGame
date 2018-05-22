@@ -242,7 +242,7 @@ public class Resource : EventDispatcher {
             }
         }
     }
-    public void Dispose() { 
+    public new void  Dispose() { 
         if(_www!=null)
         {
             _www.Dispose();
