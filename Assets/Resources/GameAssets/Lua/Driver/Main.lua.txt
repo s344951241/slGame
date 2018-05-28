@@ -3,10 +3,12 @@
 Main= {}
 
 local require = require
+require "Driver.Functions"
 require "Net.protobuf"
 require "Driver.CSharpCall"
 require "Driver.LuaStart"
 require "Net.LuaNet"
+
 
 local CS = CS
 local EventManager = CS.EventManager
@@ -16,6 +18,8 @@ local LuaProtoTest = CS.LuaProtoTest
 
 function Main:Start()
 	print("------------lua启动ing")
+	local test = require "Com.ModuleOne"
+	test:ShowName()
 	LuaStart:Start()
 	LuaStart:TestMethod("11111")
     xlua.hotfix(CS.HotfixTool,'ShowString',function(self)

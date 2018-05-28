@@ -1,0 +1,10 @@
+
+ModuleBase = class("ModuleBase")
+
+function ModuleBase:Create(name)
+    self.name = name
+end
+
+function ModuleBase:ShowName()
+    print("theName:"..tostring(self.name))
+end

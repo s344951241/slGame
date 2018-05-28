@@ -1,0 +1,10 @@
+
+require ("Com/ModuleBase")
+
+local ModuleOne = class("ModuleOne",ModuleBase)
+
+function ModuleOne:Create()
+    ModuleBase.Create(self,"One")
+end
+
+return ModuleOne.New()
