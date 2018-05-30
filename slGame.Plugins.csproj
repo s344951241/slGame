@@ -215,6 +215,9 @@
     <Reference Include="DOTween">
       <HintPath>Assets/Plugins/dll/DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets/Plugins/dll/LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Assets/Plugins/dll/Mono.Cecil.dll</HintPath>
     </Reference>
@@ -238,9 +241,6 @@
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/shilei_m/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="LitJson">
-      <HintPath>Assets/Plugins/dll/LitJson.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -354,8 +354,11 @@
     <None Include="Assets\Plugins\Android\res\values\styles.xml" />
     <None Include="Assets\Resources\GameAssets\Configs\Demo.txt" />
     <None Include="Assets\Resources\GameAssets\Configs\Skill.txt" />
+    <None Include="Assets\Resources\GameAssets\Lua\Com\ModuleBase.lua.txt" />
+    <None Include="Assets\Resources\GameAssets\Lua\Com\ModuleOne.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Com\ProfilerTest.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Driver\CSharpCall.lua.txt" />
+    <None Include="Assets\Resources\GameAssets\Lua\Driver\Functions.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Driver\LuaStart.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Driver\Main.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Net\LuaNet.lua.txt" />

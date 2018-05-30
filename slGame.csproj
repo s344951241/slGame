@@ -338,6 +338,8 @@
     <Compile Include="Assets\Scripts\SomeConst.cs" />
     <Compile Include="Assets\Scripts\SoundMgr.cs" />
     <Compile Include="Assets\Scripts\Table.cs" />
+    <Compile Include="Assets\Scripts\timeLine\clip\ExampleClip.cs" />
+    <Compile Include="Assets\Scripts\timeLine\track\ExampleTrack.cs" />
     <Compile Include="Assets\Scripts\tools\BigEndianBitConverter.cs" />
     <Compile Include="Assets\Scripts\tools\ByteBuffer.cs" />
     <Compile Include="Assets\Scripts\tools\CRC.cs" />
@@ -423,8 +425,11 @@
     <None Include="Assets\Plugins\Android\res\values\styles.xml" />
     <None Include="Assets\Resources\GameAssets\Configs\Demo.txt" />
     <None Include="Assets\Resources\GameAssets\Configs\Skill.txt" />
+    <None Include="Assets\Resources\GameAssets\Lua\Com\ModuleBase.lua.txt" />
+    <None Include="Assets\Resources\GameAssets\Lua\Com\ModuleOne.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Com\ProfilerTest.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Driver\CSharpCall.lua.txt" />
+    <None Include="Assets\Resources\GameAssets\Lua\Driver\Functions.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Driver\LuaStart.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Driver\Main.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Net\LuaNet.lua.txt" />
