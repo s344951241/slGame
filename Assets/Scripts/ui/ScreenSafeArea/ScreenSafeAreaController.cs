@@ -2,11 +2,9 @@
 using UnityEngine;
 
 #if NGUI
-    [RequireComponent(typeof(UIRect))]
-#endif
+[RequireComponent(typeof(UIRect))]
 public class ScreenSafeAreaController : MonoBehaviour, IScreenSafeAreaController
 {
-#if NGUI
     [SerializeField]
         private UIPanel m_Panel = null;
 
@@ -52,7 +50,7 @@ public class ScreenSafeAreaController : MonoBehaviour, IScreenSafeAreaController
             }
         }
 
-    #region MonoBehaviour
+#region MonoBehaviour
 
         private void Awake()
         {
@@ -90,7 +88,7 @@ public class ScreenSafeAreaController : MonoBehaviour, IScreenSafeAreaController
             m_CachedTransform = null;
         }
 
-    #endregion MonoBehaviour
+#endregion MonoBehaviour
 
         private bool Init()
         {
@@ -132,18 +130,6 @@ public class ScreenSafeAreaController : MonoBehaviour, IScreenSafeAreaController
 
             return true;
         }
-#endif
 
-#if UGUI
-
-#endif
-    public void CollectRects()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Refresh()
-    {
-        throw new System.NotImplementedException();
-    }
 }
+#endif

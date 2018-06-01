@@ -92,24 +92,24 @@ public class IzCommonEffect : IzCommonEffectBase
             {
                 this.m_kTRS.localScale *= num;
             }
-            if (this.m_arrPS != null)
-            {
-                for (int i = 0; i < this.m_arrPS.Length; i++)
-                {
-                    this.m_arrPS[i].startSize *= num;
-                }
-            }
-            if (this.m_arrPE != null)
-            {
-                for (int i = 0; i < this.m_arrPE.Length; i++)
-                {
-                    if (this.m_arrPE[i] != null)
-                    {
-                        this.m_arrPE[i].minSize *= num;
-                        this.m_arrPE[i].maxSize *= num;
-                    }
-                }
-            }
+            //if (this.m_arrPS != null)
+            //{
+            //    for (int i = 0; i < this.m_arrPS.Length; i++)
+            //    {
+            //        this.m_arrPS[i].main.startSizeMultiplier = this.m_arrPS[i].main.startSizeMultiplier*num;
+            //    }
+            //}
+            //if (this.m_arrPE != null)
+            //{
+            //    for (int i = 0; i < this.m_arrPE.Length; i++)
+            //    {
+            //        if (this.m_arrPE[i] != null)
+            //        {
+            //            this.m_arrPE[i].minSize *= num;
+            //            this.m_arrPE[i].maxSize *= num;
+            //        }
+            //    }
+            //}
         }
     }
 
@@ -359,7 +359,7 @@ public class IzCommonEffect : IzCommonEffectBase
             {
                 for (int i = 0; i < this.m_arrPE.Length; i++)
                 {
-                    this.m_arrPE[i].emit = true;
+                    //this.m_arrPE[i].emit = true;
                 }
             }
         }
@@ -485,7 +485,7 @@ public class IzCommonEffect : IzCommonEffectBase
         {
             for (int i = 0; i < this.m_arrPE.Length; i++)
             {
-                this.m_arrPE[i].emit = false;
+                //this.m_arrPE[i].emit = false;
             }
         }
         if (this.m_kCET != null)
