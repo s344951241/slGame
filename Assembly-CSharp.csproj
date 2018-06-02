@@ -239,11 +239,11 @@
     <None Include="Assets\Resources\GameAssets\Lua\Com\ModuleBase.lua.txt" />
     <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Driver\LuaStart.lua.txt" />
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/workspace/sl/slGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/workspace/sl/slGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/workspace/sl/slGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/soft/unity2018.1.2/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

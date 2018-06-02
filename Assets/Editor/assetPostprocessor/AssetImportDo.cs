@@ -42,12 +42,28 @@ public class AssetImportDo : AssetPostprocessor
     #region audio
     public void OnPreprocessAudio()
     {
-        Debug.Log("OnPreprocessAudio");
+       
     }
 
     public void OnPostprocessAudio(AudioClip clip)
     {
-        Debug.Log("OnPostprocessAudio");
+        AudioImporter audioImporter = (AudioImporter)assetImporter;
+        if (clip.length < 30)
+        {
+            audioImporter.preloadAudioData = false;
+            AudioImporterSampleSettings setting = new AudioImporterSampleSettings();
+            setting.loadType = AudioClipLoadType.DecompressOnLoad;
+            setting.compressionFormat = AudioCompressionFormat.Vorbis;
+            audioImporter.defaultSampleSettings = setting;
+        }
+        else
+        {
+            audioImporter.preloadAudioData = false;
+            AudioImporterSampleSettings setting = new AudioImporterSampleSettings();
+            setting.loadType = AudioClipLoadType.Streaming;
+            setting.compressionFormat = AudioCompressionFormat.Vorbis;
+            audioImporter.defaultSampleSettings = setting;
+        }
     }
     #endregion
     #region model

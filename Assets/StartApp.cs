@@ -31,6 +31,9 @@ public class StartApp : MonoBehaviour {
         Debug.LogError("111");
         //XMLReader
 
+        //Music Test
+        SoundMgr._instance.bgmPlay("testMusic");
+
 
     }
 	
