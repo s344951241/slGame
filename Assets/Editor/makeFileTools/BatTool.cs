@@ -5,13 +5,21 @@ using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
 
-public class GitTool : EditorWindow
+public class BatTool : EditorWindow
 {
     [MenuItem("Game Tools/GitCommit")]
 	public static void gitCommit()
     {
         string rootPath = Application.dataPath.Replace("Assets", "") + "/";
         string batPath = rootPath + "gitCommit.bat";
+        ExecuteBatFile(batPath);
+    }
+
+    [MenuItem("Game Tools/OptimizeLuaTable")]
+    public static void optimizeLuaTable()
+    {
+        string rootPath = Application.dataPath.Replace("Assets", "") + "/";
+        string batPath = rootPath + "LuaTableChange.bat";
         ExecuteBatFile(batPath);
     }
 

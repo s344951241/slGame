@@ -63,7 +63,7 @@
     <Compile Include="Assets\Editor\assetPostprocessor\AssetImportDo.cs" />
     <Compile Include="Assets\Editor\ExcelRead.cs" />
     <Compile Include="Assets\Editor\ExcelToTxt.cs" />
-    <Compile Include="Assets\Editor\makeFileTools\GitTool.cs" />
+    <Compile Include="Assets\Editor\makeFileTools\BatTool.cs" />
     <Compile Include="Assets\Editor\publish\AssetBundleEditor.cs" />
     <Compile Include="Assets\Editor\publish\PublisherEditor.cs" />
     <Compile Include="Assets\Editor\ScreenSafeArea\GameViewSizeType.cs" />
