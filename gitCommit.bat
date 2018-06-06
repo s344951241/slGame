@@ -2,7 +2,7 @@
 
 git status
 git add .
-git commit -m 'c#设计模式'
+git commit -m 'sl脫脦脧路驴貌录脺录脟脗录'
 git push origin master
 
 pause

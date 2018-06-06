@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\LuaProtoTest.cs" />
     <Compile Include="Assets\LuaStart.cs" />
+    <Compile Include="Assets\New2018\PresetImportFolder.cs" />
     <Compile Include="Assets\Scripts\ConfigManager.cs" />
     <Compile Include="Assets\Scripts\effect\EffectMgr.cs" />
     <Compile Include="Assets\Scripts\effect\IzBillboard.cs" />
@@ -224,11 +225,14 @@
     <None Include="Assets\Resources\GameAssets\Lua\Driver\CSharpCall.lua.txt" />
     <None Include="Assets\AssetsLibrary\Config\bundleversion.xml" />
     <None Include="Assets\XLua\Resources\xlua\util.lua.txt" />
+    <None Include="Assets\New2018\SimplestInstancedShader.shader" />
+    <None Include="Assets\New2018\InstancedColorSurfaceShader.shader" />
     <None Include="Assets\Resources\GameAssets\Lua\Net\LuaNet.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Configs\Skill.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Resources\perf\profiler.lua.txt" />
     <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Com\ModuleOne.lua.txt" />
+    <None Include="Assets\Resources\GameAssets\Lua\LuaTable\TestTabl.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Net\ProtoDict.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Lua\Resources\perf\memory.lua.txt" />
     <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
