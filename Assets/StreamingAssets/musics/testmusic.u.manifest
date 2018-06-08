@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2058067271
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 040ab14de76d006200914d12f7622189
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/GameAssets/Musics/testMusic.wav
+Dependencies: []

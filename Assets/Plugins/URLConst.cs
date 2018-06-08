@@ -82,11 +82,11 @@ public class URLConst{
     {
         return "UI/"+name+EXTEND_ASSETBUNDLE;
     }
-    public static string GetRunTimeMaterial(string name)
+    public static string GetMaterial(string name)
     {
         return "Materials"+name+EXTEND_ASSETBUNDLE;
     }
-    public static string GetRunTimeTexture(string name)
+    public static string GetTexture(string name)
     {
         return "Textures/"+name+EXTEND_ASSETBUNDLE;
     }

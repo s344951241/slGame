@@ -1,0 +1,6 @@
+Android
+PlayerPath?
+D:/workspace/sl/slGame/Assets/StreamingAssets/scenes/lodtest.u
+SceneListBegin?
+Assets/Resources/GameAssets/Scenes/lodTest.unity
+SceneListEnd?

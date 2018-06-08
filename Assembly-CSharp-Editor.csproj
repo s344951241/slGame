@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Editor\animationBuilder\AnimatorBuild.cs" />
     <Compile Include="Assets\Editor\assetPostprocessor\AssetImportDo.cs" />
+    <Compile Include="Assets\Editor\atlas\AtlasMaker.cs" />
     <Compile Include="Assets\Editor\ExcelRead.cs" />
     <Compile Include="Assets\Editor\ExcelToTxt.cs" />
     <Compile Include="Assets\Editor\makeFileTools\BatTool.cs" />

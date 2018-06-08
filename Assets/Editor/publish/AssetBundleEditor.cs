@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class AssetBundleEditor:EditorWindow
 {
-    public static readonly List<string> PackedExportableFileTypes = new List<string>{".prefab",".controller",".mat",".png",".jpg",".bmp",".tga",".anim",".unity",".exr",".ogg",".mp3"};
+    public static readonly List<string> PackedExportableFileTypes = new List<string>{".prefab",".controller",".mat",".png",".jpg",".bmp",".tga",".anim",".unity",".exr",".ogg",".mp3",".wav",".playable"};
     public static readonly List<string> PackedNoExportableFileTypes = new List<string>{".txt",".pb",".cs",".shader",".lua",".bytes",".dat",".meta"};
 
     private static readonly string bundleExportFolder = Application.dataPath+"/StreamingAssets/Assetbundles/";
@@ -22,8 +22,7 @@ public class AssetBundleEditor:EditorWindow
     public const string ASSET_CONFIG_PATH = "Assets/Resources/GameAssets/Configs";
     public const string ASSET_SHADER_PATH = "Assets/Resources/GameAssets/Shaders";
     public const string ASSET_LUA_PATH = "Assets/Resources/GameAssets/Luas";
-    public const string ASSET_PROTO_PATH = "Assets/Resources/GameAssets/Proto";
-    public const string ASSET_ICON_PATN = "Assets/Resources/GameAssets/UI/Icon";
+    public const string ASSET_PROTO_PATH = "Assets/Resources/GameAssets/Protos";
 
     private static readonly List<string> canSingleBundle = new List<string> {".png",".jpg",".bmp",".tga",".tif",".anim","Movies/","Musics/","/Lua","/Configs","/Shaders","/Proto",".ttf",".bytes"};
 
@@ -69,31 +68,36 @@ public class AssetBundleEditor:EditorWindow
         for(int i=0;i<objs.Length;i++)
         {
             string assetPath = AssetDatabase.GetAssetPath(objs[i]);
-            if(assetPath.StartsWith("Assets/Scripts"))
+            if (assetPath.StartsWith("Assets/Scripts"))
             {
                 AssetBundle_Scripts();
                 result = true;
             }
-            else if(assetPath.StartsWith(ASSET_ROOT)==false)
+            else if (assetPath.StartsWith(ASSET_ROOT) == false)
                 continue;
-            else if(assetPath.StartsWith(ASSET_CONFIG_PATH))
+            else if (assetPath.StartsWith(ASSET_CONFIG_PATH))
             {
                 AssetBundle_Config();
                 result = true;
             }
-            else if(assetPath.StartsWith(ASSET_LUA_PATH))
+            else if (assetPath.StartsWith(ASSET_LUA_PATH))
             {
                 AssetBundle_Lua();
                 result = true;
             }
-            else if(assetPath.StartsWith(ASSET_SHADER_PATH))
+            else if (assetPath.StartsWith(ASSET_SHADER_PATH))
             {
                 AssetBundle_Shader();
                 result = true;
             }
+            else if (assetPath.StartsWith(ASSET_PROTO_PATH))
+            {
+                AssetBundle_Proto();
+                result = true;
+            }
             else
             {
-                result = SingleBundle(assetPath,GetAssetBundleName(assetPath));
+                result = SingleBundle(assetPath, GetAssetBundleName(assetPath));
             }
         }
         return result;
@@ -320,7 +324,7 @@ public class AssetBundleEditor:EditorWindow
         string[] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/","*.*",true);
         for(int i=0;i<filePaths.Length;i++)
         {
-            string assetPath = filePaths[i].Replace(Application.dataPath,"Assets").Replace("\\","");
+            string assetPath = filePaths[i].Replace(Application.dataPath,"Assets").Replace("\\","/");
             if(IsPackedExportable(assetPath)==false)
                 continue;
             string strName = FileTools.GetFileNameNoExtension(assetPath);

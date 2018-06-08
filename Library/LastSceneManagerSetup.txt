@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/New2018/test.unity
+- path: Assets/Resources/GameAssets/Scenes/test.unity
   isLoaded: 1
   isActive: 1

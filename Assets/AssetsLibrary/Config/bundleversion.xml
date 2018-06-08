@@ -1,6 +1,21 @@
 <root>
-  <file path="configs.u" md5="e37ccc5c9e115c7c287eda2ad230d6d9" />
-  <file path="scripts.u" md5="fa076999a8f12309f8dd5813fefe8d2e" />
-  <file path="protos.u" md5="a23447cf6f44e46a8bf8f5c034ed6ce5" />
-  <file path="luas.u" />
+  <file path="configs.u" md5="9408fefbc2b3066f688481cabb2d517b" />
+  <file path="luas.u" md5="860b56f20bcfa8b27eaf7f84ccf5b84e" />
+  <file path="shaders.u" md5="b187ccc7d9dc44f4840af73ebc5a74e1" />
+  <file path="iconatlas/joystick.u" />
+  <file path="materials/new material.u">
+    <dependency path="shaders.u" />
+    <dependency path="textures/login_bg.u" />
+  </file>
+  <file path="musics/testmusic.u" />
+  <file path="scenes/lodtest.u">
+    <dependency path="materials/new material.u" />
+  </file>
+  <file path="scenes/luastart.u" />
+  <file path="scenes/test.u" />
+  <file path="scenes/timeline.u">
+    <dependency path="timelines/new timeline.u" />
+  </file>
+  <file path="textures/login_bg.u" />
+  <file path="timelines/new timeline.u" />
 </root>

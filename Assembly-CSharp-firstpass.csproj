@@ -87,6 +87,7 @@
     <Compile Include="Assets\Plugins\UBinder.cs" />
     <Compile Include="Assets\Plugins\URL.cs" />
     <Compile Include="Assets\Plugins\URLConst.cs" />
+    <Compile Include="Assets\Plugins\utility\TupleUtility.cs" />
     <Compile Include="Assets\Plugins\xml\MiniParse.cs" />
     <Compile Include="Assets\Plugins\xml\SecurityParser.cs" />
     <Compile Include="Assets\Plugins\xml\SmallXmlParser.cs" />

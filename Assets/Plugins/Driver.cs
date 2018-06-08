@@ -5,6 +5,9 @@ using System.Reflection;
 
 public class Driver : MonoBehaviour {
 
+    [SerializeField]
+    private bool m_IsEditor = false;
+
     private string FILE_SYMBOL;
     private string REMOTE_PATH;
     private string CACHE_PATH;
@@ -29,9 +32,12 @@ public class Driver : MonoBehaviour {
     private string localVersionContent;
 
 
-
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        GameConst.isEditor = m_IsEditor;
+    }
+    // Use this for initialization
+    void Start () {
         //pluginTools相关
 
         if (Application.internetReachability == NetworkReachability.NotReachable)

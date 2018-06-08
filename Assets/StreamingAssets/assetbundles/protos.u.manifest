@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2678882787
+CRC: 733765457
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ccee4ac4f62594debb20c923434ecd58
+    Hash: 24cf9b4dd7e761e56e77addfa80a2d9f
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5ad585dd02dfb5016c0dad519eab8f49
@@ -12,11 +12,11 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 Assets:
-- Assets/Resources/GameAssets/Proto/Person4.bytes
-- Assets/Resources/GameAssets/Proto/Person.bytes
-- Assets/Resources/GameAssets/Proto/Person2.bytes
-- Assets/Resources/GameAssets/Proto/Test.bytes
-- Assets/Resources/GameAssets/Proto/Person3.bytes
-- Assets/Resources/GameAssets/Proto/Person1.bytes
-- Assets/Resources/GameAssets/Proto/Person5.bytes
+- Assets/Resources/GameAssets/Protos/Person4.bytes
+- Assets/Resources/GameAssets/Protos/Person.bytes
+- Assets/Resources/GameAssets/Protos/Person2.bytes
+- Assets/Resources/GameAssets/Protos/Test.bytes
+- Assets/Resources/GameAssets/Protos/Person3.bytes
+- Assets/Resources/GameAssets/Protos/Person1.bytes
+- Assets/Resources/GameAssets/Protos/Person5.bytes
 Dependencies: []
