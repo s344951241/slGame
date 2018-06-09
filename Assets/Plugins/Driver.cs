@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using slGame.Plugin;
 
 public class Driver : MonoBehaviour {
 
@@ -35,11 +36,12 @@ public class Driver : MonoBehaviour {
     private void Awake()
     {
         GameConst.isEditor = m_IsEditor;
+        GameConst.driver = this.gameObject;
     }
     // Use this for initialization
     void Start () {
         //pluginTools相关
-
+        PlatformManager.Instance.Init();
         if (Application.internetReachability == NetworkReachability.NotReachable)
         {
             return;
