@@ -78,8 +78,8 @@ public class SceneLoaderMgr : Singleton<SceneLoaderMgr>, ITick
             //GameDispatcher.Dispatch("scene_change_before_clear");
             if (!string.IsNullOrEmpty(this.m_sceneId))
             {
-                ResourceManager.Instance.DestoryResource(URLConst.GetScene(this.m_sceneId), true, true);
-                ResourceManager.Instance.DestoryResource(URLConst.GetScenePrefab(this.m_sceneId), true, true);
+                slGame.FResources.ResourceManager.Instance.DestoryResource(URLConst.GetScene(this.m_sceneId), true, true);
+                slGame.FResources.ResourceManager.Instance.DestoryResource(URLConst.GetScenePrefab(this.m_sceneId), true, true);
             }
             this.callBack = callBack;
             this.m_sceneId = sceneId;
@@ -135,7 +135,7 @@ public class SceneLoaderMgr : Singleton<SceneLoaderMgr>, ITick
             {
                 array2[0] = scenePrefab;
             }
-            ResourceManager.Instance.DownLoadBundles(array2, new Action<object>(this.DownLoadComplete), delegate (Resource res, int listCount, int index) {
+            slGame.FResources.ResourceManager.Instance.DownLoadBundles(array2, new Action<object>(this.DownLoadComplete), delegate (slGame.FResources.Resource res, int listCount, int index) {
                 if (GameConfig.isAbLoading)
                 {
                     this.totalNum = listCount + index + 1;
@@ -159,7 +159,7 @@ public class SceneLoaderMgr : Singleton<SceneLoaderMgr>, ITick
                 this._isLoadComplete = false;
                 SceneLoaderMgr.isLoading = false;
                 Singleton<TickManager>.Instance.RemoveTick(this);
-                Resource resource = ResourceManager.Instance.GetResource(URLConst.GetScenePrefab(this.m_sceneId));
+                slGame.FResources.Resource resource = slGame.FResources.ResourceManager.Instance.GetResource(URLConst.GetScenePrefab(this.m_sceneId));
                 this.m_kScenePrefab = (GameObjectExt.Instantiate(resource.MainAsset, true) as GameObject);
                 GameObject.DontDestroyOnLoad(this.m_kScenePrefab);
                 resource.Destory(false, true);

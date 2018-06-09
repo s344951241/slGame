@@ -2,20 +2,21 @@
   <file path="configs.u" md5="9408fefbc2b3066f688481cabb2d517b" />
   <file path="luas.u" md5="860b56f20bcfa8b27eaf7f84ccf5b84e" />
   <file path="shaders.u" md5="b187ccc7d9dc44f4840af73ebc5a74e1" />
-  <file path="iconatlas/joystick.u" />
-  <file path="materials/new material.u">
+  <file path="protos.u" md5="c968739366f2730284d8ed9b7421bed3" />
+  <file path="iconatlas/joystick.u" md5="3bd047ef1afe4c74485b52bf2c217529" />
+  <file path="materials/new material.u" md5="cf8f547b83cd68e35aa29ae4f3a968c3">
     <dependency path="shaders.u" />
     <dependency path="textures/login_bg.u" />
   </file>
-  <file path="musics/testmusic.u" />
-  <file path="scenes/lodtest.u">
+  <file path="musics/testmusic.u" md5="b16a50246dd3de5911f3788d68495d48" />
+  <file path="scenes/lodtest.u" md5="d11dbf17180cbcb55314d2e07580a941">
     <dependency path="materials/new material.u" />
   </file>
-  <file path="scenes/luastart.u" />
-  <file path="scenes/test.u" />
-  <file path="scenes/timeline.u">
+  <file path="scenes/luastart.u" md5="0b7b9ccc041fdc11637785d45047abf2" />
+  <file path="scenes/test.u" md5="2ab5f5e8fa8488eb2a1e787bf53e4df2" />
+  <file path="scenes/timeline.u" md5="1655ffa98586d63fc66a596024075d79">
     <dependency path="timelines/new timeline.u" />
   </file>
-  <file path="textures/login_bg.u" />
-  <file path="timelines/new timeline.u" />
+  <file path="textures/login_bg.u" md5="fdb9697478dec48a844ee570e5b745a0" />
+  <file path="timelines/new timeline.u" md5="26cde9c80c7825708da059516ef8e982" />
 </root>

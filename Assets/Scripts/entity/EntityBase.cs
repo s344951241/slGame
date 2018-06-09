@@ -551,7 +551,7 @@ public class EntityBase
     {
         this._prefabId = prefabId;
         this._strURL = URLConst.GetModel(this._prefabId.ToString());
-        Singleton<ModelMgr>.Instance.GetModel(this._strURL, delegate (GameObject kGO, object kArg) {
+        Singleton<slGame.FResources.ModelMgr>.Instance.GetModel(this._strURL, delegate (GameObject kGO, object kArg) {
             this._kGO = kGO;
             this._kGO.name = this._prefabId + "|" + this.roleId;
             this._transform = this._kGO.transform;
@@ -573,11 +573,11 @@ public class EntityBase
 
     public void ModelRelease(bool cache = true)
     {
-        Singleton<ModelMgr>.Instance.StopResLoad(this._strURL);
+        Singleton<slGame.FResources.ModelMgr>.Instance.StopResLoad(this._strURL);
         if (this._kGO != null)
         {
             this._kGO.ResetReclaim();
-            Singleton<ModelMgr>.Instance.Reclaim(this._strURL, this._kGO);
+            Singleton<slGame.FResources.ModelMgr>.Instance.Reclaim(this._strURL, this._kGO);
             if (GameConfig.isUnityEditor)
             {
                 this._kGO.name = this._prefabId + "|已回收";

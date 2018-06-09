@@ -53,22 +53,22 @@ public class SoundMgr : MonoBehaviour {
     }
     public void bgmPlay(string audioName, float volume = 1, bool isLoop = true)
     {
-        ResourceManager.Instance.DownLoadBundle(URLConst.GetSound(audioName), delegate(object obj)
+        slGame.FResources.ResourceManager.Instance.DownLoadBundle(URLConst.GetSound(audioName), delegate(object obj)
         {
-            Resource resource = ResourceManager.Instance.GetResource(URLConst.GetSound(audioName));
+            slGame.FResources.Resource resource = slGame.FResources.ResourceManager.Instance.GetResource(URLConst.GetSound(audioName));
             AudioClip audioClip = resource.AudioClip;
             bgmPlayStart(audioClip, audioName, volume, isLoop);
-            ResourceManager.Instance.DestoryResource(resource.BundlePath, false, true);
-        }, null, ResourceManager.SOUND_PRIORITY);
+            slGame.FResources.ResourceManager.Instance.DestoryResource(resource.BundlePath, false, true);
+        }, null, slGame.FResources.ResourceManager.SOUND_PRIORITY);
     }
     public void soundPlay(string audioName, float volume = 1)
-    { 
-        ResourceManager.Instance.DownLoadBundle(URLConst.GetSound(audioName),delegate(object obj){
-            Resource resource  = ResourceManager.Instance.GetResource(URLConst.GetSound(audioName));
+    {
+        slGame.FResources.ResourceManager.Instance.DownLoadBundle(URLConst.GetSound(audioName),delegate(object obj){
+            slGame.FResources.Resource resource  = slGame.FResources.ResourceManager.Instance.GetResource(URLConst.GetSound(audioName));
             AudioClip audioClip = resource.AudioClip;
             soundPlayStart(audioClip,audioName,volume);
-            ResourceManager.Instance.DestoryResource(resource.BundlePath,false,false);
-        },null,ResourceManager.SOUND_PRIORITY);  
+            slGame.FResources.ResourceManager.Instance.DestoryResource(resource.BundlePath,false,false);
+        },null, slGame.FResources.ResourceManager.SOUND_PRIORITY);  
     }
     private void bgmPlayStart(AudioClip bgmSound, string bgmName, float volume = 1, bool isLoop = true)
     {

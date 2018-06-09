@@ -1,0 +1,15 @@
+ManifestFileVersion: 0
+CRC: 3813467583
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5e377884b98665296512c427d735febc
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Resources/GameAssets/Scenes/lodTest.unity
+Dependencies:
+- D:/workspace/sl/slGame/Assets/StreamingAssets/assetbundles/materials/new material.u

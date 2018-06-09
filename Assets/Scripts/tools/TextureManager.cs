@@ -21,12 +21,12 @@ public class TextureManager : Singleton<TextureManager> {
             string path = URLConst.GetTexture(name);
             Action<object> func = delegate (object data)
             {
-                Resource res = ResourceManager.Instance.GetResource(path);
+                slGame.FResources.Resource res = slGame.FResources.ResourceManager.Instance.GetResource(path);
                 Texture tex = res.MainAsset as Texture;
                 m_DicTexture.Add(name, tex);
-                ResourceManager.Instance.DestoryResource(res.BundlePath, false, true);
+                slGame.FResources.ResourceManager.Instance.DestoryResource(res.BundlePath, false, true);
             };
-            ResourceManager.Instance.DownLoadBundle(path, func, ResourceManager.DEFAULT_PRIORITY);
+            slGame.FResources.ResourceManager.Instance.DownLoadBundle(path, func, slGame.FResources.ResourceManager.DEFAULT_PRIORITY);
 
             return m_DicTexture[name];
         }

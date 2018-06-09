@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/workspace/sl/slGame/Assets/StreamingAssets/scenes/lodtest.u
+D:/workspace/sl/slGame/Assets/StreamingAssets/assetbundles/scenes/timeline.u
 SceneListBegin?
-Assets/Resources/GameAssets/Scenes/lodTest.unity
+Assets/Resources/GameAssets/Scenes/timeLine.unity
 SceneListEnd?

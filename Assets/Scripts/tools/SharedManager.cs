@@ -39,7 +39,7 @@ public class SharedManager:Singleton<SharedManager>{
         //else
         //    Debug.LogError(name+"is not exist shared");
     }
-    public void AddSprite(string bundlePath,Resource res)
+    public void AddSprite(string bundlePath,slGame.FResources.Resource res)
     {
         Object[] objs = res.objects;
         for(int i=0;i<objs.Length;i++)

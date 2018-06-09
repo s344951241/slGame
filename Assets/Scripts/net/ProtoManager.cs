@@ -146,11 +146,11 @@ public class ProtoManager : Singleton<ProtoManager> {
 
     public void loadProto(string name, LuaFunction callback)
     {
-        ResourceManager.Instance.DownLoadBundle(URLConst.GetProto(name), obj =>
+        slGame.FResources.ResourceManager.Instance.DownLoadBundle(URLConst.GetProto(name), obj =>
         {
-            var res = ResourceManager.Instance.GetResource(URLConst.GetProto(name));
+            var res = slGame.FResources.ResourceManager.Instance.GetResource(URLConst.GetProto(name));
             System.Object asset = res.MainAsset;
             callback.Call((asset as TextAsset).bytes);
-        }, ResourceManager.PROTO_PRIORITY);
+        }, slGame.FResources.ResourceManager.PROTO_PRIORITY);
     }
 }

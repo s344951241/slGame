@@ -53,12 +53,12 @@ public class Driver : MonoBehaviour {
 
     public static void InitApp(GameObject game)
     {
+        Application.logMessageReceived += OnLogCallBack;
+        game.AddComponent<GlobalTimer>();
+        //GameObject.Instantiate(Resources.Load<UnityEngine.Object>("UILoading"));
         if (game.GetComponent<SimpleLoader>() == null)
         {
-            Application.logMessageReceived += OnLogCallBack;
             game.AddComponent<SimpleLoader>();
-            GameObject.Instantiate(Resources.Load<UnityEngine.Object>("UILoading"));
-            game.AddComponent<GlobalTimer>();
         }
     }
     private void DeleteTempApk()

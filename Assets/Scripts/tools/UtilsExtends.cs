@@ -618,4 +618,21 @@ public static class UtilsExtends
         float num3 = lhs.z - rhs.z;
         return (double)num3 > 0.05 || (double)num3 < -0.05;
     }
+
+    public static float ToFloat(this string val)
+    {
+        float ret = 0;
+        try
+        {
+            if (!String.IsNullOrEmpty(val))
+            {
+                ret = Convert.ToSingle(val);
+            }
+        }
+        catch (Exception)
+        {
+        }
+        return ret;
+    }
+
 }

@@ -127,7 +127,7 @@ public class AssetBundleEditor:EditorWindow
         operateMode = 0;
         bundleDependDoc = null;
         EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildGroup(),GetBuildTarget());
-        AssetBundleManifest kABM = UnityEditor.BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath+"",BuildAssetBundleOptions.DeterministicAssetBundle, GetBuildTarget());
+        AssetBundleManifest kABM = UnityEditor.BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath,BuildAssetBundleOptions.DeterministicAssetBundle, GetBuildTarget());
         CreateBundleVersionXML(kABM);
         SaveXMLDoc();
         UnityEngine.Debug.Log(GetBuildTarget().ToString()+"success");
@@ -177,6 +177,7 @@ public class AssetBundleEditor:EditorWindow
         WriteXMLData("configs.u");
         WriteXMLData("luas.u");
         WriteXMLData("shaders.u");
+        WriteXMLData("protos.u");
 
         string [] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/","*.*",true);
         for(int i=0;i<filePaths.Length;i++)
@@ -302,6 +303,7 @@ public class AssetBundleEditor:EditorWindow
         SetAssetBundleName(ASSET_CONFIG_PATH,"Assetbundles/Configs");
         SetAssetBundleName(ASSET_LUA_PATH,"Assetbundles/Luas");
         SetAssetBundleName(ASSET_SHADER_PATH,"Assetbundles/Shaders");
+        SetAssetBundleName(ASSET_PROTO_PATH, "Assetbundles/Protos");
 
         string [] filePaths = FileTools.GetFileNames(Application.dataPath+"/Resources/GameAssets/","*.*",true);
         for(int i=0;i<filePaths.Length;i++)
@@ -341,7 +343,7 @@ public class AssetBundleEditor:EditorWindow
             return;
         string assetbundlename;
         if(name=="")
-            assetbundlename = assetPath.Replace(ASSET_ROOT,"").Split('.')[0]+URLConst.EXTEND_ASSETBUNDLE;
+            assetbundlename = assetPath.Replace(ASSET_ROOT,"assetbundles/").Split('.')[0]+URLConst.EXTEND_ASSETBUNDLE;
         else
             assetbundlename = name+URLConst.EXTEND_ASSETBUNDLE;
         if(!kAI.assetBundleName.Equals(assetbundlename.ToLower()))

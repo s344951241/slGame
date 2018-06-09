@@ -121,7 +121,7 @@ namespace Engine
                 if (this.configs == null)
                 {
                     this.configs = new Dictionary<string, object>();
-                    Resource resource = ResourceManager.Instance.GetResource(URLConst.DATA_CONFIG);
+                    slGame.FResources.Resource resource = slGame.FResources.ResourceManager.Instance.GetResource(URLConst.DATA_CONFIG);
                     Dictionary<string, UnityEngine.Object>.Enumerator enumerator = resource.dicObject.GetEnumerator();
                     while (enumerator.MoveNext())
                     {
@@ -129,7 +129,7 @@ namespace Engine
                         TextAsset value = current.Value as TextAsset;
                         this.configs[current.Key] = value;
                     }
-                    ResourceManager.Instance.DestoryResource(URLConst.DATA_CONFIG, false, true);
+                    slGame.FResources.ResourceManager.Instance.DestoryResource(URLConst.DATA_CONFIG, false, true);
                 }
             }
             else

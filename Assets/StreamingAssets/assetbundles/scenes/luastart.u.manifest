@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 766020563
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 04576482eb776d42fab2a55df00be644
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Resources/GameAssets/Scenes/luaStart.unity
+Dependencies: []

@@ -101,7 +101,7 @@ public class IconManager :Singleton<IconManager> {
 		CreateIcon(ResourceManager.Instance.GetResource(URLConst.ICON_ATLAS_PATH));
 #endif
     }
-    private void CreateIcon(Resource res)
+    private void CreateIcon(slGame.FResources.Resource res)
     {
         foreach (var item in res.dicObject)
         {
@@ -109,7 +109,7 @@ public class IconManager :Singleton<IconManager> {
                 continue;
             m_ConfigSprites.Add(item.Key, item.Value);
         }
-        ResourceManager.Instance.DestoryResource(res.BundlePath, false, true);
+        slGame.FResources.ResourceManager.Instance.DestoryResource(res.BundlePath, false, true);
     }
 
     public void SetImageWithSize(Image kImage, string fileName, int iconSize)

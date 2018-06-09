@@ -1,7 +1,47 @@
 ManifestFileVersion: 0
-CRC: 3499915814
+CRC: 93796679
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
+      Name: assetbundles/configs.u
+      Dependencies: {}
+    Info_1:
+      Name: assetbundles/luas.u
+      Dependencies: {}
+    Info_2:
       Name: assetbundles/shaders.u
+      Dependencies: {}
+    Info_3:
+      Name: assetbundles/protos.u
+      Dependencies: {}
+    Info_4:
+      Name: assetbundles/iconatlas/joystick.u
+      Dependencies: {}
+    Info_5:
+      Name: assetbundles/materials/new material.u
+      Dependencies:
+        Dependency_0: assetbundles/shaders.u
+        Dependency_1: assetbundles/textures/login_bg.u
+    Info_6:
+      Name: assetbundles/musics/testmusic.u
+      Dependencies: {}
+    Info_7:
+      Name: assetbundles/scenes/lodtest.u
+      Dependencies:
+        Dependency_0: assetbundles/materials/new material.u
+    Info_8:
+      Name: assetbundles/scenes/luastart.u
+      Dependencies: {}
+    Info_9:
+      Name: assetbundles/scenes/test.u
+      Dependencies: {}
+    Info_10:
+      Name: assetbundles/scenes/timeline.u
+      Dependencies:
+        Dependency_0: assetbundles/timelines/new timeline.u
+    Info_11:
+      Name: assetbundles/textures/login_bg.u
+      Dependencies: {}
+    Info_12:
+      Name: assetbundles/timelines/new timeline.u
       Dependencies: {}

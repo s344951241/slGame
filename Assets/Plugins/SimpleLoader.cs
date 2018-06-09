@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
+//用于plugin下的资源简易加载
+
 public class SimpleLoader : SingletonMonoBehaviour<SimpleLoader> {
 
     [HideInInspector]

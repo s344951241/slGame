@@ -202,7 +202,7 @@ public class IzCommonEffect : IzCommonEffectBase
             }
         };
         this.m_strURL = strURL;
-        Singleton<ModelMgr>.Instance.GetModel(strURL, fnLoaded, kArg, 100, false);
+        Singleton<slGame.FResources.ModelMgr>.Instance.GetModel(strURL, fnLoaded, kArg, 100, false);
     }
 
     public virtual void LoadResByType(IzCommonEffect.ON_LOAD_RES_FINISH fnFinish = null, object kArg = null, bool isPlay = false)
@@ -380,7 +380,7 @@ public class IzCommonEffect : IzCommonEffectBase
 
     public virtual void Release(bool bCache = true)
     {
-        Singleton<ModelMgr>.Instance.StopResLoad(URLConst.GetEffect(this.m_prefabId));
+        Singleton<slGame.FResources.ModelMgr>.Instance.StopResLoad(URLConst.GetEffect(this.m_prefabId));
         if (this.m_bDoNotCache)
         {
             bCache = false;
