@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sl.game">
+
+    <application android:label="@string/app_name">
+        <activity
+            android:name="com.sl.game.MainActivity"
+            android:screenOrientation = "landscape">
+            <!-- 屏幕旋转会导致闪退-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

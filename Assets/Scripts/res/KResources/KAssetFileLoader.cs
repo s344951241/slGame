@@ -96,10 +96,10 @@ namespace slGame.KResources
 					}
 				}
 #else
-				Log.Error("`IsEditorLoadAsset` is Unity Editor only");
+				Debug.LogError("`IsEditorLoadAsset` is Unity Editor only");
 
 #endif
-			}
+            }
             else if (!IsLoadAssetBundle)
             {
                 string extension = Path.GetExtension(path);
@@ -177,7 +177,7 @@ namespace slGame.KResources
                 }
                 catch
                 {
-                    Log.Error("[OnAssetBundleLoaded:mainAsset]{0}", path);
+                    Debug.LogError(string.Format("[OnAssetBundleLoaded:mainAsset]{0}", path));
                 }
 #endif
 
