@@ -1,0 +1,7 @@
+以在Scene视图里给某个坐标绘制一个icon。它的好处是可以传一个Vecotor3 作为图片显示的位置。 参数2就是图片的名子，当然这个图片必须放在Gizmos文件夹下面
+
+void OnDrawGizmos(){  
+
+        Gizmos.DrawIcon(transform.position,"0.png",true);  
+
+    }  
