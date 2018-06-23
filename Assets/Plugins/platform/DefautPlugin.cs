@@ -18,7 +18,7 @@ namespace slGame.Plugin
         {
 
         }
-        public void Method()
+        public void UnityMethod(string str)
         {
 
         }

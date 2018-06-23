@@ -155,8 +155,6 @@
     <Compile Include="Assets\Plugins\zip\Zip\ZipNameTransform.cs" />
     <Compile Include="Assets\Plugins\zip\Zip\ZipOutputStream.cs" />
     <Compile Include="Assets\Plugins\zip\ZipHelper.cs" />
-    <None Include="Assets\Plugins\Android\res\layout\activity_main.xml" />
-    <None Include="Assets\Plugins\Android\res\values\values.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/workSpace/slGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

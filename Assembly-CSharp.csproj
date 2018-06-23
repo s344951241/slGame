@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\event\EventConst.cs" />
     <Compile Include="Assets\Scripts\event\EventManager.cs" />
     <Compile Include="Assets\Scripts\event\EventTest.cs" />
+    <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\IConfig.cs" />
     <Compile Include="Assets\Scripts\LayerName.cs" />
     <Compile Include="Assets\Scripts\lua\ClassForLua.cs" />
@@ -261,6 +262,7 @@
     <None Include="Assets\Resources\GameAssets\Luas\Net\ProtoDict.lua.txt" />
     <None Include="Assets\Resources\GameAssets\Luas\Resources\perf\memory.lua.txt" />
     <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
+    <None Include="Assets\Resources\GameAssets\version.txt" />
     <None Include="Assets\XLua\Gen\Resources\hotfix_id_map.lua.txt" />
     <None Include="Assets\UWA\UWALib\serverip.txt" />
     <None Include="Assets\XLua\CHANGELOG.txt" />

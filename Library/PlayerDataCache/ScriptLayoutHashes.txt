@@ -178,3 +178,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 2b533a0d0227656d01d189bb021d693b Assembly-CSharp.dll:KEngine.KHttpDownloader
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.StartApp
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PresetImportFolder
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GameStart

@@ -17,7 +17,10 @@ namespace slGame.Plugin
         }
         void Start()
         {
-
+            if (m_AndroidObj != null)
+            {
+                m_AndroidObj.Call("CallUnityMethod", "testString");
+            }
         }
 
         void Update()
@@ -25,9 +28,9 @@ namespace slGame.Plugin
 
         }
 
-        public void Method()
+        public void UnityMethod(string str)
         {
-
+            Debug.Log("android called unityMethod param:" + str);
         }
     }
 }

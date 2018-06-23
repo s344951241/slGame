@@ -7,7 +7,7 @@ namespace slGame.Plugin
     public interface IPlugin
     {
 
-        void Method();
+        void UnityMethod(string str);
     }
 }
 

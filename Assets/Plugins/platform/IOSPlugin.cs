@@ -20,11 +20,11 @@ namespace slGame.Plugin
 
         }
         [DllImport("__Internal")]
-        private static extern void method();
+        private static extern void method(string str);
 
-        public void Method()
+        public void UnityMethod(string str)
         {
-            method();
+            method(str);
         }
     }
 
