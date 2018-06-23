@@ -77,6 +77,7 @@
     <Compile Include="Assets\Plugins\log\GameLogger.cs" />
     <Compile Include="Assets\Plugins\MD5Hash.cs" />
     <Compile Include="Assets\Plugins\MonoBehaviourExt.cs" />
+    <Compile Include="Assets\Plugins\platform\AndroidHelper.cs" />
     <Compile Include="Assets\Plugins\platform\AndroidPlugin.cs" />
     <Compile Include="Assets\Plugins\platform\DefautPlugin.cs" />
     <Compile Include="Assets\Plugins\platform\IOSPlugin.cs" />
