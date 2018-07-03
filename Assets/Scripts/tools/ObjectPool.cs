@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public static class ObjectPool{
+public static class ObjectPool
+{
     private static Dictionary<Type, Queue<object>> pools;
 
     static ObjectPool()
@@ -21,7 +22,8 @@ public static class ObjectPool{
 
     public static object ReclaimObject(object obj)
     {
-        if (obj != null) {
+        if (obj != null)
+        {
             Queue<object> pool = Getpool(obj.GetType());
             pool.Enqueue(obj);
         }
@@ -52,16 +54,16 @@ public static class ObjectPool{
         Queue<object> pool = Getpool(typeof(T));
         return pool.Count;
     }
-    public static object GetObject(Type type,params object[] list)
+    public static object GetObject(Type type, params object[] list)
     {
         var pool = Getpool(type);
-        if(pool.Count>0)
+        if (pool.Count > 0)
         {
             return (object)pool.Dequeue();
         }
         else
         {
-            return (object)System.Activator.CreateInstance(type,list);
+            return (object)System.Activator.CreateInstance(type, list);
         }
     }
 }

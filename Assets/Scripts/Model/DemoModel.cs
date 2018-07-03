@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DemoModel:Singleton<DemoModel> {
 
-    private Dictionary<int, Demo> mDemoDic;
+    private Dictionary<int, DemoVO> mDemoDic;
 
     public DemoModel()
     {
-        mDemoDic = new Dictionary<int, Demo>();
+        mDemoDic = new Dictionary<int, DemoVO>();
         InitData();
     }
 
@@ -17,7 +17,7 @@ public class DemoModel:Singleton<DemoModel> {
 
     }
 
-    public Demo getVo(int id)
+    public DemoVO getVo(int id)
     {
         if (mDemoDic.ContainsKey(id))
             return mDemoDic[id];
