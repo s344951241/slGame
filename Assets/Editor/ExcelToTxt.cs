@@ -11,7 +11,7 @@ public class ExcelToTxt : Editor {
 
     private static string path = Application.dataPath + "/AssetsLibrary/Config/excel";
     private static string txtPath = Application.dataPath + "/Resources/GameAssets/Configs";
-    private static string CSharpVOPath = Application.dataPath + "/Scripts/VO";
+    private static string CSharpVOPath = Application.dataPath + "/Scripts/vo";
     [MenuItem("config/txt")]
     public static void test()
     {
@@ -104,15 +104,19 @@ public class ExcelToTxt : Editor {
         int columns = table.Columns.Count;
         int rows = table.Rows.Count;
         string className = table.TableName + "VO";
-        StreamWriter sw = new StreamWriter(CSharpVOPath + "/" + className + ".cs", true, Encoding.UTF8);
+        if (File.Exists(CSharpVOPath + "/" + className + ".cs"))
+        {
+            File.Delete(CSharpVOPath + "/" + className + ".cs");
+        }
+        StreamWriter sw = new StreamWriter(CSharpVOPath + "/" + className + ".cs",false, Encoding.UTF8);
         sw.WriteLine("using System;");
         sw.WriteLine("using System.Collections;");
         sw.WriteLine("using System.Collections.Generic;");
         sw.WriteLine("using UnityEngine;");
         sw.WriteLine("public class " + className+ " {");
         sw.WriteLine("");
-        sw.WriteLine("static int[] _Keys;");
-        sw.WriteLine("static SortedList<int, "+className+"> _Data;");
+        sw.WriteLine("  static int[] _Keys;");
+        sw.WriteLine("  static SortedList<int, "+className+"> _Data;");
         string[] setDataStrs = new string[columns];
         string id = "Id";
         for (int i = 0; i < columns; i++)
@@ -127,7 +131,7 @@ public class ExcelToTxt : Editor {
             {
                 id = table.Rows[1][i].ToString();
             }
-            sw.WriteLine("public " + table.Rows[2][i].ToString() + " " + table.Rows[1][i].ToString() + ";");
+            sw.WriteLine("  public " + table.Rows[2][i].ToString() + " " + table.Rows[1][i].ToString() + ";");
 
             switch (table.Rows[2][i].ToString())
             {
@@ -144,6 +148,9 @@ public class ExcelToTxt : Editor {
                 case ExcelType.type4:
                     setDataStrs[i] = "      if (tokens[" + i + "] != null)\n" +
                                      "           data." + table.Rows[1][i].ToString() + " = new Table(tokens[" + i + "]); ";
+                    break;
+                case ExcelType.type5:
+                    setDataStrs[i] = "      bool.TryParse(tokens[" + i + "], out data." + table.Rows[1][i].ToString() + ");";
                     break;
                 default:
                     break;
@@ -211,4 +218,5 @@ public class ExcelType
     public const string type2 = "float";
     public const string type3 = "string";
     public const string type4 = "table";
+    public const string type5 = "bool";
 }

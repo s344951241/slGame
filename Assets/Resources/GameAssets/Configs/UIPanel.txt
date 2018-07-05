@@ -1,0 +1,6 @@
+﻿界面编号,名字,界面组,预设,是否允许多个实例,是否暂停被其覆盖的同组界面,是否隐藏Menu层界面,是否隐藏Main层界面,是否隐藏Message层,是否隐藏Dialog层,是否显示蒙板
+Id,Name,Group,Prefab,AllowMultiInstance,PauseCoveredUIPanel,PauseMenuUIGrou,PauseMainUIGroup,PauseMessageUIGroup,PauseDialogUIGroup,ShowBackgroundMask
+int,string,string,string,bool,bool,bool,bool,bool,bool,bool
+1,界面1,Main,dssf,False,False,False,False,False,False,False
+2,界面2,Menu,gfgfhg,False,False,False,False,False,False,False
+3,界面3,Dialog,fdgh,False,False,False,False,False,False,False
