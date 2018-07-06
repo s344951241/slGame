@@ -19,7 +19,7 @@ public class EditorGUIObjectField : EditorWindow
     private static string m_TxtPath = "D://cellectiont.txt";
 
     static List<string> extensionsDepend = new List<string>() { "." };
-    static List<string> extensionsDepended = new List<string>() { ".prefab", ".unity", ".mat", ".asset" };
+    static List<string> extensionsDepended = new List<string>() { ".prefab", ".unity", ".mat", ".asset",".playable" };
 
     int[] m_types = { 1, 2 };
     string[] m_typeName = { "我依赖的资源", "依赖我的资源" };
@@ -38,6 +38,10 @@ public class EditorGUIObjectField : EditorWindow
     {
         GUILayout.BeginHorizontal();
         GUILayout.Space(10);
+        if (Selection.objects.Length > 0)
+        {
+            m_Path = AssetDatabase.GetAssetPath(Selection.objects[0]);
+        }
         m_Path = getPathEditor(m_Path);
         if (GUILayout.Button("查询"))
         {
@@ -45,11 +49,15 @@ public class EditorGUIObjectField : EditorWindow
             m_context = string.Empty;
             if (curType == 1)
             {
-                result = MeDependList(m_Path);
+                MeDependList(m_Path,delegate(List<string> param) {
+                    result = param;
+                });
             }
             else if (curType == 2)
             {
-                result = DependMeList(m_Path);
+                DependMeList(m_Path,delegate(List<string> param) {
+                    result = param;
+                });
             }
         }
         GUILayout.EndHorizontal();
@@ -82,7 +90,7 @@ public class EditorGUIObjectField : EditorWindow
 
         GUILayout.EndHorizontal();
     }
-    public static List<string> MeDependList(string file_path)
+    public static void MeDependList(string file_path,Action<List<string>> action)
     {
         List<string> depend_list = new List<string>();
 
@@ -92,23 +100,38 @@ public class EditorGUIObjectField : EditorWindow
         }
         else
         {
-
-
             string[] files = AssetDatabase.GetDependencies(new string[] { file_path });
-            foreach (string file in files)
+            int start = 0;
+
+            EditorApplication.update = delegate ()
             {
+                string file = files[start];
+                bool is_cancel = EditorUtility.DisplayCancelableProgressBar("匹配资源中...", file, (float)start / (float)files.Length);
                 // 将合法的资源压入列表
                 if (!file.Equals(file_path))
                 {
                     depend_list.Add(file);
                 }
-            }
-        }
 
-        return depend_list;
+                start++;
+                if (is_cancel || start >= files.Length)
+                {
+                    EditorUtility.ClearProgressBar();
+                    EditorApplication.update = null;
+                    start = 0;
+                    Debug.Log("匹配结束");
+                }
+            };
+            EditorApplication.delayCall = delegate ()
+            {
+                action.Invoke(depend_list);
+            };
+            //EditorUtility.DisplayCancelableProgressBar("匹配资源中...", "", 0);
+        }
+       
     }
 
-    public static List<string> DependMeList(string file_path)
+    public void DependMeList(string file_path,Action<List<string>> action)
     {
         List<string> depend_list = new List<string>();
 
@@ -195,9 +218,13 @@ public class EditorGUIObjectField : EditorWindow
             };
 
 #endif
+            EditorApplication.delayCall = delegate ()
+            {
+                action.Invoke(depend_list);
+            };
         }
-
-        return depend_list;
+       
+       
     }
     public static bool ReplaceDepend(string search_file_path, List<string> src_file_list, string dest_file_path)
     {
