@@ -8,19 +8,23 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-public class EditorGUIObjectField : EditorWindow {
+public class EditorGUIObjectField : EditorWindow
+{
 
     private Vector2 m_ScrollPosition = Vector2.zero;
-    private static  EditorGUIObjectField m_Editor;
+    private static EditorGUIObjectField m_Editor;
     private static string m_context;
     private static string m_Path;
+    private static List<string> m_Collection;
+    private static string m_TxtPath = "D://cellectiont.txt";
 
-    static List<string> extensions = new List<string>() { ".prefab", ".unity", ".mat", ".asset"};
+    static List<string> extensionsDepend = new List<string>() { "." };
+    static List<string> extensionsDepended = new List<string>() { ".prefab", ".unity", ".mat", ".asset" };
 
     int[] m_types = { 1, 2 };
-    string[] m_typeName = {  "我依赖的资源", "依赖我的资源" };
+    string[] m_typeName = { "我依赖的资源", "依赖我的资源" };
     int curType = 1;
-    List<string> result  =new List<string>();
+    List<string> result = new List<string>();
     [MenuItem("Game Tools/Check Dependence")]
     public static void Init()
     {
@@ -53,7 +57,7 @@ public class EditorGUIObjectField : EditorWindow {
         GUILayout.BeginHorizontal();
         GUILayout.Space(10);
 
-        curType = EditorGUILayout.IntPopup("选择",curType,m_typeName,m_types);
+        curType = EditorGUILayout.IntPopup("选择", curType, m_typeName, m_types);
 
         GUILayout.EndHorizontal();
 
@@ -67,11 +71,11 @@ public class EditorGUIObjectField : EditorWindow {
             {
                 str.Append(result[i] + "\n");
             }
-           
+
 
             m_context = str.ToString();
         }
-        m_ScrollPosition = GUILayout.BeginScrollView(m_ScrollPosition, GUILayout.Height(200f));
+        m_ScrollPosition = GUILayout.BeginScrollView(m_ScrollPosition, GUILayout.Height(400f));
         m_context = TextField(m_context);
 
         GUILayout.EndScrollView();
@@ -88,19 +92,19 @@ public class EditorGUIObjectField : EditorWindow {
         }
         else
         {
-            
+
 
             string[] files = AssetDatabase.GetDependencies(new string[] { file_path });
             foreach (string file in files)
             {
                 // 将合法的资源压入列表
-                if (extensions.Contains(Path.GetExtension(file).ToLower())&&(!file.Equals(file_path)))
+                if (!file.Equals(file_path))
                 {
                     depend_list.Add(file);
                 }
             }
         }
-        
+
         return depend_list;
     }
 
@@ -113,7 +117,7 @@ public class EditorGUIObjectField : EditorWindow {
             EditorUtility.DisplayDialog("提示", "查找的资源不存在", "确定");
         }
         else
-        { 
+        {
 
             // 获取自己的guid
             string guid = AssetDatabase.AssetPathToGUID(file_path);
@@ -156,7 +160,7 @@ public class EditorGUIObjectField : EditorWindow {
 #else
             // 获取资源列表
             string[] files = Directory.GetFiles(Application.dataPath, "*.*", SearchOption.AllDirectories).Where(s =>
-                extensions.Contains(Path.GetExtension(s).ToLower())&&s.Contains("GameMain")).ToArray();
+                extensionsDepended.Contains(Path.GetExtension(s).ToLower()) && s.Contains("GameMain")).ToArray();
 
             // 获取匹配成功的资源列表
             int start_index = 0;
@@ -187,9 +191,9 @@ public class EditorGUIObjectField : EditorWindow {
                     EditorApplication.update = null;
                     Debug.LogError(e);
                 }
-               
+
             };
-            
+
 #endif
         }
 
@@ -324,5 +328,51 @@ public class EditorGUIObjectField : EditorWindow {
             }
         }
         return null;
+    }
+
+    [MenuItem("Game Tools/获取目录下的所有后缀名")]
+    public static void getAllends()
+    {
+        m_Collection = new List<string>();
+        GetDirs(Application.dataPath + "/GameMain");
+        if (m_Collection.Count!=0)
+        {
+            if (File.Exists(m_TxtPath))
+            {
+                File.Delete(m_TxtPath);
+            }
+
+            FileStream fs = new FileStream(m_TxtPath, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs, Encoding.Default);
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < m_Collection.Count; i++)
+            {
+                builder.AppendLine(m_Collection[i]);
+            }
+            sw.WriteLine(builder.ToString());
+            sw.Close();
+            fs.Close();
+            System.Diagnostics.Process.Start("notepad.exe", m_TxtPath);
+        }
+    }
+
+    private static void GetDirs(string dirPath)
+    {
+        foreach (string path in Directory.GetFiles(dirPath))
+        {
+            string str = Path.GetExtension(path);
+            if (!m_Collection.Contains(str))
+            {
+                m_Collection.Add(str);
+            }
+        }
+
+        if (Directory.GetDirectories(dirPath).Length > 0)
+        {
+            foreach (string path in Directory.GetDirectories(dirPath))
+            {
+                GetDirs(path);
+            }
+        }
     }
 }
