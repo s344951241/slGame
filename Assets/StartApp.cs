@@ -32,9 +32,16 @@ public class StartApp : MonoBehaviour {
         //XMLReader
 
         //Music Test
-        SoundMgr._instance.bgmPlay("testMusic");
+        //SoundMgr._instance.bgmPlay("testMusic");
 
+        PriortyHeap heap = new PriortyHeap();
+        heap.add(1);
+        heap.add(3);
+        heap.add(4);
+        heap.add(5);
+        heap.add(2);
 
+        Debug.LogError(heap.maxAndRemove());
     }
 	
 	// Update is called once per frame
