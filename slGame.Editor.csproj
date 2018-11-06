@@ -422,6 +422,11 @@
     <Compile Include="Assets\Editor\ScreenSafeArea\GameViewSizeUtils.cs" />
     <Compile Include="Assets\Editor\ScreenSafeArea\ScreenSafeAreaManagerInspector.cs" />
     <Compile Include="Assets\Editor\shader\ColorsGUI.cs" />
+    <Compile Include="Assets\Editor\shader\EditorUpdate.cs" />
+    <Compile Include="Assets\Editor\shader\ShaderCollectionData.cs" />
+    <Compile Include="Assets\Editor\shader\ShaderCollectionOther.cs" />
+    <Compile Include="Assets\Editor\shader\ShaderVariantCollectionTool.cs" />
+    <Compile Include="Assets\Editor\shader\ShaderVariantCollectionTools.cs" />
     <Compile Include="Assets\Editor\skill\SkillEditorTool.cs" />
     <Compile Include="Assets\Editor\skill\SkillEditorWindow.cs" />
     <Compile Include="Assets\Editor\skill\SkillLevelEditorWindow.cs" />

@@ -19,7 +19,7 @@ public class EditorGUIObjectField : EditorWindow
     private static string m_TxtPath = "D://cellectiont.txt";
 
     static List<string> extensionsDepend = new List<string>() { "." };
-    static List<string> extensionsDepended = new List<string>() { ".prefab", ".unity", ".mat", ".asset",".playable" };
+    static List<string> extensionsDepended = new List<string>() { ".prefab", ".unity", ".mat", ".asset",".playable",".shader" };
 
     int[] m_types = { 1, 2 };
     string[] m_typeName = { "我依赖的资源", "依赖我的资源" };
@@ -183,7 +183,7 @@ public class EditorGUIObjectField : EditorWindow
 #else
             // 获取资源列表
             string[] files = Directory.GetFiles(Application.dataPath, "*.*", SearchOption.AllDirectories).Where(s =>
-                extensionsDepended.Contains(Path.GetExtension(s).ToLower()) && s.Contains("GameMain")).ToArray();
+                extensionsDepended.Contains(Path.GetExtension(s).ToLower())).ToArray();
 
             // 获取匹配成功的资源列表
             int start_index = 0;

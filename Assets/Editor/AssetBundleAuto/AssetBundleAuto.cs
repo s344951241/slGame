@@ -16,7 +16,7 @@ public class AssetBundleAuto
     private static string PATH = Utility.Path.GetCombinePath(Application.dataPath, "GameMain/Configs/AssetBundleCollection.xml");
     private AssetBundleLoadType LoadType = AssetBundleLoadType.LoadFromFile;
 
-    [MenuItem("Project-S/构建工具/仅生成 AssetBundle 集合")]
+    [MenuItem("Game Tools/构建工具/仅生成 AssetBundle 集合")]
     private static void Open()
     {
         CreateEditorXml();
