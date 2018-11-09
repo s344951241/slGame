@@ -326,6 +326,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Graph.cs" />
     <Compile Include="Assets\LuaProtoTest.cs" />
     <Compile Include="Assets\LuaStart.cs" />
     <Compile Include="Assets\New2018\PresetImportFolder.cs" />
@@ -488,6 +489,7 @@
     <Compile Include="Assets\Scripts\XMLReader.cs" />
     <Compile Include="Assets\Scripts\XMLSerializeUtil.cs" />
     <Compile Include="Assets\StartApp.cs" />
+    <Compile Include="Assets\Test.cs" />
     <Compile Include="Assets\XLua\Gen\DelegatesGensBridge.cs" />
     <Compile Include="Assets\XLua\Gen\EnumWrap.cs" />
     <Compile Include="Assets\XLua\Gen\PackUnpack.cs" />

@@ -1,0 +1,2 @@
+1.Assets/XLua/Doc/Materials/logo.mat
+Legacy Shaders/Diffuse (UnityEngine.Shader)

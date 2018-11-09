@@ -415,6 +415,7 @@
     <Compile Include="Assets\Editor\EditorGUIObjectField.cs" />
     <Compile Include="Assets\Editor\ExcelRead.cs" />
     <Compile Include="Assets\Editor\ExcelToTxt.cs" />
+    <Compile Include="Assets\Editor\FindBuiltinAssets.cs" />
     <Compile Include="Assets\Editor\makeFileTools\BatTool.cs" />
     <Compile Include="Assets\Editor\publish\AssetBundleEditor.cs" />
     <Compile Include="Assets\Editor\publish\PublisherEditor.cs" />
