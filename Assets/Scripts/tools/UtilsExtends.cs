@@ -384,6 +384,16 @@ public static class UtilsExtends
         }
     }
 
+    public static string ToStr<T>(this List<T> list)
+    {
+        string result = "";
+        foreach (T t in list)
+        {
+            result += t + "|";
+        }
+        return result;
+    }
+
     public static void ResetAll(this GameObject kGO)
     {
         kGO.ResetLocalPosition();
